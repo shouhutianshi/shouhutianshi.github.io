@@ -330,74 +330,31 @@
       
         
           
-            <p>###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</p>
-<p>//冒泡排序<br>function bubbleSort(arr) {<br>    var len = arr.length;<br>    for (var i=0; i &lt; len; i++) {<br>        for (var j=0; j &lt; len - 1 - i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                var temp = arr[j+1];<br>                arr[j+1] = arr[j];<br>                arr[j] = temp;<br>            }<br>        }<br>    }<br>    return arr;<br>}</p>
-<p>//改进后的冒泡排序<br>function bubbleSort2(arr) {<br>    var i = arr.length - 1;<br>    while(i &gt; 0) {<br>        var pos = 0;<br>        for (var j=0; j &lt; i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                pos = j;<br>                var temp = arr[j];<br>                arr[j] = arr[j+1];<br>                arr[j+1] = temp;<br>            }<br>        }<br>        i = pos;<br>    }<br>    return arr;<br>}</p>
-<p>//正向反向查询-冒泡排序<br>function bubbleSort3(arr) {<br>    var low = 0;<br>    var high = arr.length - 1;<br>    var temp, i;<br>    while(low &lt; high) {<br>        for (j=low; j &lt; high; ++j)<br>        if (arr[j] &gt; arr[j+1]) {<br>            temp = arr[j];<br>            arr[j] = arr[j+1];<br>            arr[j+1] = temp;<br>        }<br>        –high;</p>
-<pre><code>    for(j=high; j &gt; low; --j)
-        if (arr[j] &lt; arr[j-1]) {
-            temp = arr[j];
-            arr[j] = arr[j-1];
-            arr[j-1] = arr[j];    
-        }
-    ++low;
-}
-return arr;
-</code></pre><p>}</p>
-<p>//选择排序<br>function selectionSort(arr) {<br>    var len = arr.length;<br>    var minIndex, temp;<br>    for(var i=0; i &lt; len - 1; i++) {<br>        minIndex = i;<br>        for(var j=i + 1; j &lt; len; j++) {<br>            if (arr[j] &lt; arr[minIndex]) {<br>                minIndex = j;<br>            }<br>        }</p>
-<pre><code>    temp = arr[i];
-    arr[i] = arr[minIndex];
-    arr[minIndex] = temp;
-}
-return arr;
-</code></pre><p>}</p>
-<p>//插入排序<br>function insertionSort(arr) {<br>    if (Object.prototype.toString.call(arr).slice(8,-1) === “Array”) {<br>        for(var i=1; i &lt; arr.length; i++) {<br>            var key = arr[i];<br>            var j = i - 1;<br>            while(j &gt;= 0 &amp;&amp; arr[j] &gt; key) {<br>                arr[j+1] = arr[j];<br>                j–;<br>            }<br>            arr[j+1] = key;<br>        }<br>        return arr;<br>    } else {<br>        return ‘arr is not an Array!’;<br>    }<br>}<br>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(insertionSort(arr));</p>
-<p>//用二分查找改进插入排序<br>function insertionSort2(arr) {<br>    if (Object.prototype.toString.call(arr).slice(8,-1) === “Array”) {<br>        for(var i=1, len=arr.length; i &lt; len; i++) {<br>            var key = arr[i],<br>                left = 0,<br>                right = i - 1;<br>                while(left &lt;= right) {<br>                    var middle = parseInt((left + right) /2);<br>                    if (key &lt; arr[middle]) {<br>                        right = middle - 1;<br>                    } else {<br>                        left = middle + 1;<br>                    }<br>                }</p>
-<pre><code>            for(var j=i-1; j &gt; left; j--) {
-                arr[j+1] = arr[j];
-            }                
-            arr[left] = key;
-    } 
-    return arr;
-}else {
-    return &apos;array si not an Array&apos;;
-}
-</code></pre><p>}<br>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(insertionSort2(arr));</p>
-<p>//希尔排序<em>(已经不懂什么意思)<br>var shellSort = function(arr) {<br>    var len = arr.length,<br>        temp,<br>        gap = 1;<br>    while(gap &lt; (len / 5)) {<br>        gap = gap </em> 5 + 1;<br>    }</p>
-<pre><code>for(gap; gap &gt; 0; gap = Math.floor(gap / 5)) {
-    for(var i = gap; i &lt; len; i++) {
-        temp = arr[i];
-        for(var j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap) {
-            arr[j + gap] = arr[j];
-            /*console.log(i);
-            console.log(j);
-            console.log(j+gap);*/
-        }
-
-        arr[j + gap] = temp;
-    }
-}
-
-return arr;
-</code></pre><p>}</p>
-<p>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(shellSort(arr));</p>
-<p>//归并排序<br>function mergeSort(arr) {<br>    var len = arr.length;<br>    if (len &lt; 2) {<br>        return arr;<br>    }</p>
-<pre><code>var middle = Math.floor(len / 2),
-    left = arr.slice(0, middle),
-    right = arr.slice(middle);
-    return merge(mergeSort(left),mergeSort(right));
-</code></pre><p>}</p>
-<p>function merge(left,right) {<br>    var result = [];<br>    while(left.length &amp;&amp; right.length) {<br>        if (left[0] &lt;= right[0]) {<br>            result.push(left.shift());<br>        } else {<br>            result.push(right.shift());<br>        }<br>    }</p>
-<pre><code>while(left.length) {
-    result.push(left.shift());
-}
-while(right.length) {
-    result.push(right.shift());
-}
-
-return result;
-</code></pre><p>}</p>
-<p>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(mergeSort(arr));</p>
+            <h3 id="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"><a href="#参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。" class="headerlink" title="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"></a>参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</h3><ul>
+<li><p>冒泡排序 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function bubbleSort(arr) &#123;</div><div class="line">	var len = arr.length;</div><div class="line">	for (var i=0; i &lt; len; i++) &#123;</div><div class="line">		for (var j=0; j &lt; len - 1 - i; j++) &#123;</div><div class="line">			if (arr[j] &gt; arr[j+1]) &#123;</div><div class="line">				var temp = arr[j+1];</div><div class="line">				arr[j+1] = arr[j];</div><div class="line">				arr[j] = temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>改进后的冒泡排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function bubbleSort2(arr) &#123;</div><div class="line">	var i = arr.length - 1;</div><div class="line">	while(i &gt; 0) &#123;</div><div class="line">		var pos = 0;</div><div class="line">		for (var j=0; j &lt; i; j++) &#123;</div><div class="line">			if (arr[j] &gt; arr[j+1]) &#123;</div><div class="line">				pos = j;</div><div class="line">				var temp = arr[j];</div><div class="line">				arr[j] = arr[j+1];</div><div class="line">				arr[j+1] = temp; </div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		i = pos;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>正向反向查询-冒泡排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function bubbleSort3(arr) &#123;</div><div class="line">	var low = 0;</div><div class="line">	var high = arr.length - 1;</div><div class="line">	var temp, i;</div><div class="line">	while(low &lt; high) &#123;</div><div class="line">		for (j=low; j &lt; high; ++j)</div><div class="line">		if (arr[j] &gt; arr[j+1]) &#123;</div><div class="line">			temp = arr[j];</div><div class="line">			arr[j] = arr[j+1];</div><div class="line">			arr[j+1] = temp;</div><div class="line">		&#125;</div><div class="line">		--high;</div><div class="line"></div><div class="line">		for(j=high; j &gt; low; --j)</div><div class="line">			if (arr[j] &lt; arr[j-1]) &#123;</div><div class="line">				temp = arr[j];</div><div class="line">				arr[j] = arr[j-1];</div><div class="line">				arr[j-1] = arr[j];	</div><div class="line">			&#125;</div><div class="line">		++low;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>选择排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function selectionSort(arr) &#123;</div><div class="line">	var len = arr.length;</div><div class="line">	var minIndex, temp;</div><div class="line">	for(var i=0; i &lt; len - 1; i++) &#123;</div><div class="line">		minIndex = i;</div><div class="line">		for(var j=i + 1; j &lt; len; j++) &#123;</div><div class="line">			if (arr[j] &lt; arr[minIndex]) &#123;</div><div class="line">				minIndex = j;</div><div class="line">			&#125;	</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[minIndex];</div><div class="line">		arr[minIndex] = temp;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>插入排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function insertionSort(arr) &#123;</div><div class="line">	if (Object.prototype.toString.call(arr).slice(8,-1) === &quot;Array&quot;) &#123;</div><div class="line">		for(var i=1; i &lt; arr.length; i++) &#123;</div><div class="line">			var key = arr[i];</div><div class="line">			var j = i - 1;</div><div class="line">			while(j &gt;= 0 &amp;&amp; arr[j] &gt; key) &#123;</div><div class="line">				arr[j+1] = arr[j];</div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">			arr[j+1] = key;</div><div class="line">		&#125;</div><div class="line">		return arr;</div><div class="line">	&#125; else &#123;</div><div class="line">		return &apos;arr is not an Array!&apos;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(insertionSort(arr));</div></pre></td></tr></table></figure>
+</li>
+<li><p>用二分查找改进插入排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function insertionSort2(arr) &#123;</div><div class="line">	if (Object.prototype.toString.call(arr).slice(8,-1) === &quot;Array&quot;) &#123;</div><div class="line">		for(var i=1, len=arr.length; i &lt; len; i++) &#123;</div><div class="line">			var key = arr[i],</div><div class="line">				left = 0,</div><div class="line">				right = i - 1;</div><div class="line">				while(left &lt;= right) &#123;</div><div class="line">					var middle = parseInt((left + right) /2);</div><div class="line">					if (key &lt; arr[middle]) &#123;</div><div class="line">						right = middle - 1;</div><div class="line">					&#125; else &#123;</div><div class="line">						left = middle + 1;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				for(var j=i-1; j &gt; left; j--) &#123;</div><div class="line">					arr[j+1] = arr[j];</div><div class="line">				&#125;				</div><div class="line">				arr[left] = key;</div><div class="line">		&#125; </div><div class="line">		return arr;</div><div class="line">	&#125;else &#123;</div><div class="line">		return &apos;array si not an Array&apos;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(insertionSort2(arr));</div></pre></td></tr></table></figure>
+</li>
+<li><p>希尔排序*(已经不懂什么意思)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var shellSort = function(arr) &#123;</div><div class="line">	var len = arr.length,</div><div class="line">		temp,</div><div class="line">		gap = 1;</div><div class="line">	while(gap &lt; (len / 5)) &#123;</div><div class="line">		gap = gap * 5 + 1;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	for(gap; gap &gt; 0; gap = Math.floor(gap / 5)) &#123;</div><div class="line">		for(var i = gap; i &lt; len; i++) &#123;</div><div class="line">			temp = arr[i];</div><div class="line">			for(var j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap) &#123;</div><div class="line">				arr[j + gap] = arr[j];</div><div class="line">				/*console.log(i);</div><div class="line">				console.log(j);</div><div class="line">				console.log(j+gap);*/</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			arr[j + gap] = temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(shellSort(arr));</div></pre></td></tr></table></figure>
+</li>
+<li><p>归并排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">function mergeSort(arr) &#123;</div><div class="line">	var len = arr.length;</div><div class="line">	if (len &lt; 2) &#123;</div><div class="line">		return arr;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var middle = Math.floor(len / 2),</div><div class="line">		left = arr.slice(0, middle),</div><div class="line">		right = arr.slice(middle);</div><div class="line">		return merge(mergeSort(left),mergeSort(right));</div><div class="line">&#125;</div><div class="line"></div><div class="line">function merge(left,right) &#123;</div><div class="line">	var result = [];</div><div class="line">	while(left.length &amp;&amp; right.length) &#123;</div><div class="line">		if (left[0] &lt;= right[0]) &#123;</div><div class="line">			result.push(left.shift());</div><div class="line">		&#125; else &#123;</div><div class="line">			result.push(right.shift());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	while(left.length) &#123;</div><div class="line">		result.push(left.shift());</div><div class="line">	&#125;</div><div class="line">	while(right.length) &#123;</div><div class="line">		result.push(right.shift());</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(mergeSort(arr));</div></pre></td></tr></table></figure></li>
+</ul>
 
           
         
