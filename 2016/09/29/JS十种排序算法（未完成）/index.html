@@ -80,6 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -92,15 +93,20 @@
 
 
 
-<meta name="description" content="第一自己搭建很高兴啦">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoYang的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+
+<meta name="description" content="###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。
+//冒泡排序function bubbleSort(arr) {    var len = arr.length;    for (var i=0; i &amp;lt; len; i++) {        for (var j=0; j &amp;lt; len - 1 - i; j++) {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS十种排序算法（未完成）">
+<meta property="og:url" content="http://yoursite.com/2016/09/29/JS十种排序算法（未完成）/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="第一自己搭建很高兴啦">
+<meta property="og:description" content="###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。
+//冒泡排序function bubbleSort(arr) {    var len = arr.length;    for (var i=0; i &amp;lt; len; i++) {        for (var j=0; j &amp;lt; len - 1 - i; j++) {">
+<meta property="og:updated_time" content="2016-09-29T07:40:14.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoYang的博客">
-<meta name="twitter:description" content="第一自己搭建很高兴啦">
+<meta name="twitter:title" content="JS十种排序算法（未完成）">
+<meta name="twitter:description" content="###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。
+//冒泡排序function bubbleSort(arr) {    var len = arr.length;    for (var i=0; i &amp;lt; len; i++) {        for (var j=0; j &amp;lt; len - 1 - i; j++) {">
 
 
 
@@ -121,9 +127,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/29/JS十种排序算法（未完成）/"/>
 
-  <title> XiaoYang的博客 </title>
+  <title> JS十种排序算法（未完成） | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,9 +150,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,9 +267,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -285,10 +289,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/29/JS十种排序算法（未完成）/" itemprop="url">
-                  JS十种排序算法（未完成）
-                </a>
+                JS十种排序算法（未完成）
               
             
           </h1>
@@ -328,9 +329,7 @@
       
 
       
-        
-          
-            <p>###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</p>
+        <p>###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</p>
 <p>//冒泡排序<br>function bubbleSort(arr) {<br>    var len = arr.length;<br>    for (var i=0; i &lt; len; i++) {<br>        for (var j=0; j &lt; len - 1 - i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                var temp = arr[j+1];<br>                arr[j+1] = arr[j];<br>                arr[j] = temp;<br>            }<br>        }<br>    }<br>    return arr;<br>}</p>
 <p>//改进后的冒泡排序<br>function bubbleSort2(arr) {<br>    var i = arr.length - 1;<br>    while(i &gt; 0) {<br>        var pos = 0;<br>        for (var j=0; j &lt; i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                pos = j;<br>                var temp = arr[j];<br>                arr[j] = arr[j+1];<br>                arr[j+1] = temp;<br>            }<br>        }<br>        i = pos;<br>    }<br>    return arr;<br>}</p>
 <p>//正向反向查询-冒泡排序<br>function bubbleSort3(arr) {<br>    var low = 0;<br>    var high = arr.length - 1;<br>    var temp, i;<br>    while(low &lt; high) {<br>        for (j=low; j &lt; high; ++j)<br>        if (arr[j] &gt; arr[j+1]) {<br>            temp = arr[j];<br>            arr[j] = arr[j+1];<br>            arr[j+1] = temp;<br>        }<br>        –high;</p>
@@ -399,129 +398,59 @@ return result;
 </code></pre><p>}</p>
 <p>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(mergeSort(arr));</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/28/终于完成啦/" itemprop="url">
-                  (终于完成啦)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T15:17:25+08:00" content="2016-09-28">
-              2016-09-28
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          
-        
-      
-    </div>
+              <a href="/2016/09/28/终于完成啦/" rel="next" title="(终于完成啦)">
+                <i class="fa fa-chevron-left"></i> (终于完成啦)
+              </a>
+            
+          </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -529,6 +458,10 @@ return result;
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -548,8 +481,17 @@ return result;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avator.jpg"
@@ -592,6 +534,17 @@ return result;
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -688,6 +641,10 @@ return result;
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

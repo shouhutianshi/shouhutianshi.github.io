@@ -95,7 +95,7 @@
 <meta name="description" content="第一自己搭建很高兴啦">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XiaoYang的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
 <meta property="og:description" content="第一自己搭建很高兴啦">
 <meta name="twitter:card" content="summary">
@@ -121,9 +121,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/JavaScript/"/>
 
-  <title> XiaoYang的博客 </title>
+  <title> 标签: JavaScript | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,9 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,263 +261,45 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        JavaScript
+        <small>标签</small>
+      </h2>
+    </div>
+
     
       
 
-  
-  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/09/29/JS十种排序算法（未完成）/" itemprop="url">
               
-                
-                <a class="post-title-link" href="/2016/09/29/JS十种排序算法（未完成）/" itemprop="url">
-                  JS十种排序算法（未完成）
-                </a>
+                <span itemprop="name">JS十种排序算法（未完成）</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-29T15:35:31+08:00" content="2016-09-29">
-              2016-09-29
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-29T15:35:31+08:00"
+              content="2016-09-29" >
+          09-29
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</p>
-<p>//冒泡排序<br>function bubbleSort(arr) {<br>    var len = arr.length;<br>    for (var i=0; i &lt; len; i++) {<br>        for (var j=0; j &lt; len - 1 - i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                var temp = arr[j+1];<br>                arr[j+1] = arr[j];<br>                arr[j] = temp;<br>            }<br>        }<br>    }<br>    return arr;<br>}</p>
-<p>//改进后的冒泡排序<br>function bubbleSort2(arr) {<br>    var i = arr.length - 1;<br>    while(i &gt; 0) {<br>        var pos = 0;<br>        for (var j=0; j &lt; i; j++) {<br>            if (arr[j] &gt; arr[j+1]) {<br>                pos = j;<br>                var temp = arr[j];<br>                arr[j] = arr[j+1];<br>                arr[j+1] = temp;<br>            }<br>        }<br>        i = pos;<br>    }<br>    return arr;<br>}</p>
-<p>//正向反向查询-冒泡排序<br>function bubbleSort3(arr) {<br>    var low = 0;<br>    var high = arr.length - 1;<br>    var temp, i;<br>    while(low &lt; high) {<br>        for (j=low; j &lt; high; ++j)<br>        if (arr[j] &gt; arr[j+1]) {<br>            temp = arr[j];<br>            arr[j] = arr[j+1];<br>            arr[j+1] = temp;<br>        }<br>        –high;</p>
-<pre><code>    for(j=high; j &gt; low; --j)
-        if (arr[j] &lt; arr[j-1]) {
-            temp = arr[j];
-            arr[j] = arr[j-1];
-            arr[j-1] = arr[j];    
-        }
-    ++low;
-}
-return arr;
-</code></pre><p>}</p>
-<p>//选择排序<br>function selectionSort(arr) {<br>    var len = arr.length;<br>    var minIndex, temp;<br>    for(var i=0; i &lt; len - 1; i++) {<br>        minIndex = i;<br>        for(var j=i + 1; j &lt; len; j++) {<br>            if (arr[j] &lt; arr[minIndex]) {<br>                minIndex = j;<br>            }<br>        }</p>
-<pre><code>    temp = arr[i];
-    arr[i] = arr[minIndex];
-    arr[minIndex] = temp;
-}
-return arr;
-</code></pre><p>}</p>
-<p>//插入排序<br>function insertionSort(arr) {<br>    if (Object.prototype.toString.call(arr).slice(8,-1) === “Array”) {<br>        for(var i=1; i &lt; arr.length; i++) {<br>            var key = arr[i];<br>            var j = i - 1;<br>            while(j &gt;= 0 &amp;&amp; arr[j] &gt; key) {<br>                arr[j+1] = arr[j];<br>                j–;<br>            }<br>            arr[j+1] = key;<br>        }<br>        return arr;<br>    } else {<br>        return ‘arr is not an Array!’;<br>    }<br>}<br>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(insertionSort(arr));</p>
-<p>//用二分查找改进插入排序<br>function insertionSort2(arr) {<br>    if (Object.prototype.toString.call(arr).slice(8,-1) === “Array”) {<br>        for(var i=1, len=arr.length; i &lt; len; i++) {<br>            var key = arr[i],<br>                left = 0,<br>                right = i - 1;<br>                while(left &lt;= right) {<br>                    var middle = parseInt((left + right) /2);<br>                    if (key &lt; arr[middle]) {<br>                        right = middle - 1;<br>                    } else {<br>                        left = middle + 1;<br>                    }<br>                }</p>
-<pre><code>            for(var j=i-1; j &gt; left; j--) {
-                arr[j+1] = arr[j];
-            }                
-            arr[left] = key;
-    } 
-    return arr;
-}else {
-    return &apos;array si not an Array&apos;;
-}
-</code></pre><p>}<br>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(insertionSort2(arr));</p>
-<p>//希尔排序<em>(已经不懂什么意思)<br>var shellSort = function(arr) {<br>    var len = arr.length,<br>        temp,<br>        gap = 1;<br>    while(gap &lt; (len / 5)) {<br>        gap = gap </em> 5 + 1;<br>    }</p>
-<pre><code>for(gap; gap &gt; 0; gap = Math.floor(gap / 5)) {
-    for(var i = gap; i &lt; len; i++) {
-        temp = arr[i];
-        for(var j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap) {
-            arr[j + gap] = arr[j];
-            /*console.log(i);
-            console.log(j);
-            console.log(j+gap);*/
-        }
-
-        arr[j + gap] = temp;
-    }
-}
-
-return arr;
-</code></pre><p>}</p>
-<p>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(shellSort(arr));</p>
-<p>//归并排序<br>function mergeSort(arr) {<br>    var len = arr.length;<br>    if (len &lt; 2) {<br>        return arr;<br>    }</p>
-<pre><code>var middle = Math.floor(len / 2),
-    left = arr.slice(0, middle),
-    right = arr.slice(middle);
-    return merge(mergeSort(left),mergeSort(right));
-</code></pre><p>}</p>
-<p>function merge(left,right) {<br>    var result = [];<br>    while(left.length &amp;&amp; right.length) {<br>        if (left[0] &lt;= right[0]) {<br>            result.push(left.shift());<br>        } else {<br>            result.push(right.shift());<br>        }<br>    }</p>
-<pre><code>while(left.length) {
-    result.push(left.shift());
-}
-while(right.length) {
-    result.push(right.shift());
-}
-
-return result;
-</code></pre><p>}</p>
-<p>var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];<br>console.log(mergeSort(arr));</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/28/终于完成啦/" itemprop="url">
-                  (终于完成啦)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T15:17:25+08:00" content="2016-09-28">
-              2016-09-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
+  </div>
 
   
 
