@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[chrome的用法--持续手机]]></title>
+      <url>http://yoursite.com/2016/10/08/chrome%E7%9A%84%E7%94%A8%E6%B3%95-%E6%8C%81%E7%BB%AD%E6%94%B6%E9%9B%86/</url>
+      <content type="html"><![CDATA[<h3 id="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"><a href="#之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充" class="headerlink" title="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"></a>之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充</h3><h4 id="选取DOM元素"><a href="#选取DOM元素" class="headerlink" title="选取DOM元素"></a>选取DOM元素</h4><p>在一个网页没有引入jQuery的情况下，在控制台里可以通过类似的方法选取DOM：<br>通过$$(‘tagName’)或者$$(‘.className’)来选择所有匹配规则的DOM元素。选择返回的是一个数组，可以通过数组的方法来访问其中的单个元素。</p>
+<hr>
+<h4 id="让chrome变成所见即所得的编辑器"><a href="#让chrome变成所见即所得的编辑器" class="headerlink" title="让chrome变成所见即所得的编辑器"></a>让chrome变成所见即所得的编辑器</h4><p>打开开发者控制台，输入<code>document.body.contentEditable=true</code>即可。</p>
+<hr>
+<h3 id="获取某个DOM元素绑定的事件"><a href="#获取某个DOM元素绑定的事件" class="headerlink" title="获取某个DOM元素绑定的事件"></a>获取某个DOM元素绑定的事件</h3>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JS十种排序算法（未完成）]]></title>
       <url>http://yoursite.com/2016/09/29/JS%E5%8D%81%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%89/</url>
       <content type="html"><![CDATA[<h3 id="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"><a href="#参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。" class="headerlink" title="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"></a>参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</h3><a id="more"></a>
