@@ -80,7 +80,6 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="chrome," />
 
 
 
@@ -93,17 +92,15 @@
 
 
 
-
-<meta name="description" content="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充">
-<meta property="og:type" content="article">
-<meta property="og:title" content="chrome的用法--持续收集">
-<meta property="og:url" content="http://yoursite.com/2016/10/08/chrome的用法-持续收集/index.html">
+<meta name="description" content="如无必要，勿增实体">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XiaoYang的博客">
+<meta property="og:url" content="http://yoursite.com/categories/jquery/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充">
-<meta property="og:updated_time" content="2016-10-08T06:33:14.272Z">
+<meta property="og:description" content="如无必要，勿增实体">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chrome的用法--持续收集">
-<meta name="twitter:description" content="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充">
+<meta name="twitter:title" content="XiaoYang的博客">
+<meta name="twitter:description" content="如无必要，勿增实体">
 
 
 
@@ -124,9 +121,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/08/chrome的用法-持续收集/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/jquery/"/>
 
-  <title> chrome的用法--持续收集 | XiaoYang的博客 </title>
+  <title> 分类: jquery | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,156 +265,47 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <section id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        jquery
+        <small>分类</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/10/13/jquery-loadLazy/" itemprop="url">
               
-                chrome的用法--持续收集
+                <span itemprop="name">jquery-lazyload</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-08T13:33:25+08:00" content="2016-10-08">
-              2016-10-08
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-10-13T17:10:04+08:00"
+              content="2016-10-13" >
+          10-13
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"><a href="#之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充" class="headerlink" title="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"></a>之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充</h3><a id="more"></a>
-<h4 id="选取DOM元素"><a href="#选取DOM元素" class="headerlink" title="选取DOM元素"></a>选取DOM元素</h4><p>在一个网页没有引入jQuery的情况下，在控制台里可以通过类似的方法选取DOM：<br>通过<code>$$(&#39;tagName&#39;)</code>或者<code>$$(&#39;.className&#39;)</code>来选择所有匹配规则的DOM元素。选择返回的是一个数组，可以通过数组的方法来访问其中的单个元素。</p>
-<hr>
-<h4 id="让chrome变成所见即所得的编辑器"><a href="#让chrome变成所见即所得的编辑器" class="headerlink" title="让chrome变成所见即所得的编辑器"></a>让chrome变成所见即所得的编辑器</h4><p>打开开发者控制台，输入<code>document.body.contentEditable=true</code>即可。</p>
-<hr>
-<h3 id="获取某个DOM元素绑定的事件"><a href="#获取某个DOM元素绑定的事件" class="headerlink" title="获取某个DOM元素绑定的事件"></a>获取某个DOM元素绑定的事件</h3><p>在调试的时候，有时需要知道某个元素上面绑定了上面出发事件，chrome可以让你轻松找到它们。<br><code>getEventListener($(&#39;selector&#39;))</code>方法以数组对象的形式返回某个元素绑定的所有事件。<br>要是你需要选择其中的某个事件，可以通过下面的方法来访问。<br><code>getEventsListener($(&#39;selector&#39;)).eventName[0].listener</code>或者是<code>getEventsListener($(&#39;#firstName&#39;)).click[0].listener</code></p>
-<hr>
-<h4 id="监测事件"><a href="#监测事件" class="headerlink" title="监测事件"></a>监测事件</h4><p>当你需要监视某个DOM出发的事件时，可以用一下方法：</p>
-<ul>
-<li><code>monitorEvents($(&#39;selector&#39;))</code>会监测某个元素上绑定的所有事件，一旦该元素的某个事件触发，就会在控制台显示出来。</li>
-<li><code>monitorEvents($(&#39;selector&#39;),&#39;eventName&#39;)</code>监听某个元素上绑定的具体事件。</li>
-<li><code>monitorEvents($(&#39;selector&#39;),[&#39;eventName1&#39;,&#39;eventName2&#39;,...])</code>监听某个元素上绑定的相应事件。</li>
-</ul>
-<hr>
-<h4 id="用计时器来获取某段代码块的运行时间"><a href="#用计时器来获取某段代码块的运行时间" class="headerlink" title="用计时器来获取某段代码块的运行时间"></a>用计时器来获取某段代码块的运行时间</h4><p>通过<code>console.time(&#39;labelName&#39;)</code>和<code>console.timeEnd(&#39;labelName&#39;)</code>即可得到相应代码运行的时间。</p>
-<hr>
-<h4 id="以表格形式输出数组"><a href="#以表格形式输出数组" class="headerlink" title="以表格形式输出数组"></a>以表格形式输出数组</h4><p>如果我们有这样一个数组：<code>var myArray=[{a:1,b:2,c:3},{a:1,b:2,c:3,d:4},{k:11,f:22},{a:1,b:2,c:3}]</code>,恰好我们需要以一种表格的形式输出，可以使用<code>console.tabel(variableName)</code>来获取。</p>
-<hr>
-<h4 id="通过控制台方法监测元素"><a href="#通过控制台方法监测元素" class="headerlink" title="通过控制台方法监测元素"></a>通过控制台方法监测元素</h4><ul>
-<li><code>inspect($(&#39;selector&#39;))</code>会检查所有匹配选择器的DOM元素，并返回所有选择器选择的DOM对象。例如<code>inspect($(&#39;#firstName&#39;))</code>选择所有ID是firstName的元素，<code>inspect($(&#39;a&#39;)[3])</code>检测并返回页面上第四个p元素。</li>
-<li><code>$0</code>,<code>$1</code>…返回你最近检查过的几个元素，例如<code>$0</code>回返回你最后检查的元素，<code>$1</code>则返回倒数第二个。</li>
-</ul>
-<hr>
-<h4 id="列出某个元素的所有属性"><a href="#列出某个元素的所有属性" class="headerlink" title="列出某个元素的所有属性"></a>列出某个元素的所有属性</h4><p><code>dir($(&#39;selector&#39;))</code>会返回匹配选择器的DOM元素的所有属性。</p>
-<hr>
-<h4 id="获取最后计算结果的值"><a href="#获取最后计算结果的值" class="headerlink" title="获取最后计算结果的值"></a>获取最后计算结果的值</h4><p>通过<code>$_</code>来获取最后的计算结果值。</p>
-<hr>
-<h4 id="清空控制台输出"><a href="#清空控制台输出" class="headerlink" title="清空控制台输出"></a>清空控制台输出</h4><ul>
-<li>clear()</li>
-<li>window–ctrl+l</li>
-</ul>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/chrome/" rel="tag">#chrome</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/29/JS十种排序算法（未完成）/" rel="next" title="JS十种排序算法（未完成）">
-                <i class="fa fa-chevron-left"></i> JS十种排序算法（未完成）
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/13/jquery-loadLazy/" rel="prev" title="jquery-lazyload">
-                jquery-lazyload <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+
 
 
           </div>
@@ -425,10 +313,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -448,17 +332,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -528,17 +403,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"><span class="nav-number">1.</span> <span class="nav-text">之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选取DOM元素"><span class="nav-number">1.1.</span> <span class="nav-text">选取DOM元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#让chrome变成所见即所得的编辑器"><span class="nav-number">1.2.</span> <span class="nav-text">让chrome变成所见即所得的编辑器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取某个DOM元素绑定的事件"><span class="nav-number">2.</span> <span class="nav-text">获取某个DOM元素绑定的事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#监测事件"><span class="nav-number">2.1.</span> <span class="nav-text">监测事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用计时器来获取某段代码块的运行时间"><span class="nav-number">2.2.</span> <span class="nav-text">用计时器来获取某段代码块的运行时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以表格形式输出数组"><span class="nav-number">2.3.</span> <span class="nav-text">以表格形式输出数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过控制台方法监测元素"><span class="nav-number">2.4.</span> <span class="nav-text">通过控制台方法监测元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列出某个元素的所有属性"><span class="nav-number">2.5.</span> <span class="nav-text">列出某个元素的所有属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取最后计算结果的值"><span class="nav-number">2.6.</span> <span class="nav-text">获取最后计算结果的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清空控制台输出"><span class="nav-number">2.7.</span> <span class="nav-text">清空控制台输出</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -635,10 +499,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
