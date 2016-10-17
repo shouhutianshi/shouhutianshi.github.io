@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[jquery-lazyload]]></title>
-      <url>http://yoursite.com/2016/10/13/jquery-loadLazy/</url>
+      <url>http://to.me/shouhutianshi.github.io/2016/10/13/jquery-loadLazy/</url>
       <content type="html"><![CDATA[<h3 id="jQuery-lazyload的用法"><a href="#jQuery-lazyload的用法" class="headerlink" title="jQuery lazyload的用法"></a>jQuery lazyload的用法</h3><h4 id="插件描述：jQuery图片延迟加载插件jQuery-lazyload-使用延迟加载可提高网页下载速度。在某些情况下也能帮助减轻服务器负载。"><a href="#插件描述：jQuery图片延迟加载插件jQuery-lazyload-使用延迟加载可提高网页下载速度。在某些情况下也能帮助减轻服务器负载。" class="headerlink" title="插件描述：jQuery图片延迟加载插件jQuery.lazyload,使用延迟加载可提高网页下载速度。在某些情况下也能帮助减轻服务器负载。"></a>插件描述：jQuery图片延迟加载插件jQuery.lazyload,使用延迟加载可提高网页下载速度。在某些情况下也能帮助减轻服务器负载。</h4><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>引用jquery和jquery.lazyload.js到你的页面</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;jquery-XXX.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;jquery.loadlazy.js?XXX&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>html图片调用方法<br>为图片加入样式lazy图片路径引用方法用data-original<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div><div class="line">&lt;img class=&quot;lazy&quot; data-original=&quot;img/XXX.jpg&quot;&gt;</div></pre></td></tr></table></figure></p>
@@ -18,7 +18,7 @@
     
     <entry>
       <title><![CDATA[chrome的用法--持续收集]]></title>
-      <url>http://yoursite.com/2016/10/08/chrome%E7%9A%84%E7%94%A8%E6%B3%95-%E6%8C%81%E7%BB%AD%E6%94%B6%E9%9B%86/</url>
+      <url>http://to.me/shouhutianshi.github.io/2016/10/08/chrome%E7%9A%84%E7%94%A8%E6%B3%95-%E6%8C%81%E7%BB%AD%E6%94%B6%E9%9B%86/</url>
       <content type="html"><![CDATA[<h3 id="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"><a href="#之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充" class="headerlink" title="之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充"></a>之前一直再用chrome调试代码，但今天看到一篇差不多是讲chrome的奇技淫巧。遂整理几个，以后再有，继续补充</h3><a id="more"></a>
 <h4 id="选取DOM元素"><a href="#选取DOM元素" class="headerlink" title="选取DOM元素"></a>选取DOM元素</h4><p>在一个网页没有引入jQuery的情况下，在控制台里可以通过类似的方法选取DOM：<br>通过<code>$$(&#39;tagName&#39;)</code>或者<code>$$(&#39;.className&#39;)</code>来选择所有匹配规则的DOM元素。选择返回的是一个数组，可以通过数组的方法来访问其中的单个元素。</p>
 <hr>
@@ -55,7 +55,7 @@
     
     <entry>
       <title><![CDATA[JS十种排序算法（未完成）]]></title>
-      <url>http://yoursite.com/2016/09/29/JS%E5%8D%81%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%89/</url>
+      <url>http://to.me/shouhutianshi.github.io/2016/09/29/JS%E5%8D%81%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%89/</url>
       <content type="html"><![CDATA[<h3 id="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"><a href="#参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。" class="headerlink" title="参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。"></a>参考网上的教程打算把JS的十种排序算法搞清楚，奈何实在太难。看到第五种手指头就已经脱离键盘了。</h3><a id="more"></a>
 <ul>
 <li><p>冒泡排序 </p>
@@ -87,7 +87,7 @@
     
     <entry>
       <title><![CDATA[(终于完成啦)]]></title>
-      <url>http://yoursite.com/2016/09/28/%E7%BB%88%E4%BA%8E%E5%AE%8C%E6%88%90%E5%95%A6/</url>
+      <url>http://to.me/shouhutianshi.github.io/2016/09/28/%E7%BB%88%E4%BA%8E%E5%AE%8C%E6%88%90%E5%95%A6/</url>
       <content type="html"></content>
     </entry>
     
@@ -96,19 +96,19 @@
     
     <entry>
       <title><![CDATA[about]]></title>
-      <url>http://yoursite.com/about/index.html</url>
+      <url>http://to.me/about/index.html</url>
       <content type="html"><![CDATA[<h1 id="写些什么好呢？"><a href="#写些什么好呢？" class="headerlink" title="写些什么好呢？"></a>写些什么好呢？</h1>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <url>http://to.me/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <url>http://to.me/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
