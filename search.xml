@@ -10,7 +10,7 @@
 <p>background属性包括有<code>background-color</code> background-image<code>`background-repeat</code> background-position<code>`background-size</code> background-origin<code>`background-clip</code> <code>background-attachment</code> 八个属性。</p>
 <hr>
 <h4 id="background-color最简单，这里就不再做过多的叙述。"><a href="#background-color最简单，这里就不再做过多的叙述。" class="headerlink" title="background-color最简单，这里就不再做过多的叙述。"></a><code>background-color</code>最简单，这里就不再做过多的叙述。</h4><hr>
-<h4 id="background-image-有三个参数。"><a href="#background-image-有三个参数。" class="headerlink" title="background-image 有三个参数。"></a><code>background-image</code> 有三个参数。</h4><h2 id="分别是url-里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"><a href="#分别是url-里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。" class="headerlink" title="* 分别是url(),里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"></a>* 分别是url(),里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。</h2><h4 id="background-repeat-有五个参数。"><a href="#background-repeat-有五个参数。" class="headerlink" title="background-repeat 有五个参数。"></a><code>background-repeat</code> 有五个参数。</h4><ul>
+<h4 id="background-image-有三个参数。"><a href="#background-image-有三个参数。" class="headerlink" title="background-image 有三个参数。"></a><code>background-image</code> 有三个参数。</h4><h2 id="分别是url-，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"><a href="#分别是url-，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。" class="headerlink" title="* 分别是url()，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"></a>* 分别是url()，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。</h2><h4 id="background-repeat-有五个参数。"><a href="#background-repeat-有五个参数。" class="headerlink" title="background-repeat 有五个参数。"></a><code>background-repeat</code> 有五个参数。</h4><ul>
 <li>分别是<code>repeat</code>，背景图片从垂直和水平方向重复。<code>repeat-x</code>背景从水平方向重复。<code>repeat-y</code>背景从垂直方面重复。<code>no-repeat</code>背景不重复。<code>inherit</code>继承父元素的<code>background-repeat</code>属性。<h5 id="background-position-有一个值，但是这个值有三种表述方式。"><a href="#background-position-有一个值，但是这个值有三种表述方式。" class="headerlink" title="background-position 有一个值，但是这个值有三种表述方式。"></a><code>background-position</code> 有一个值，但是这个值有三种表述方式。</h5></li>
 <li>分别是用方位来描述：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">top left</div><div class="line">top center</div><div class="line">top right</div><div class="line">center left</div><div class="line">center center</div><div class="line">center right</div><div class="line">bottom left</div><div class="line">bottom center</div><div class="line">bottom right;</div></pre></td></tr></table></figure>
 </li>
@@ -141,14 +141,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
