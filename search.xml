@@ -4,13 +4,91 @@
   
     
     <entry>
+      <title><![CDATA[65条正则表达式]]></title>
+      <url>http://yoursite.com/2016/10/20/65%E6%9D%A1%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<p>很多不太懂正则的朋友，在遇到需要用正则校验数据时，往往是在网上去找很久，结果找来的还是不很符合要求。所以我最近把开发中常用的一些正则表达式整理了一下，在这里分享一下。给自己留个底，也给朋友们做个参考。<br><a id="more"></a></p>
+<h3 id="校验数字的表达式"><a href="#校验数字的表达式" class="headerlink" title="校验数字的表达式"></a>校验数字的表达式</h3><ol>
+<li>数字：<code>^[0-9]*$</code></li>
+<li>n位的数字：<code>^\d{n}$</code></li>
+<li>至少n位的数字：<code>^\d{n,}$</code><br>4.m-n位的数字：<code>^\d{m,n}$</code></li>
+<li>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></li>
+<li>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></li>
+<li>带1-2位小数的正数或负数：<code>^(-)?\d+(.\d{1,2})?$</code></li>
+<li>正数、负数、和小数：<code>^(-|+)?\d+(.\d+)?$</code></li>
+<li>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></li>
+<li>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></li>
+<li>非零的正整数：<code>^[1-9]\d$ 或 ^([1-9][0-9]){1,3}$ 或 ^+?[1-9][0-9]*$</code></li>
+<li>非零的负整数：<code>^-[1-9][]0-9&quot;$ 或 ^-[1-9]\d$</code></li>
+<li>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></li>
+<li>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></li>
+<li>非负浮点数：<code>^\d+(.\d+)?$ 或 ^[1-9]\d.\d|0.\d[1-9]\d|0?.0+|0$</code></li>
+<li>非正浮点数：<code>^((-\d+(.\d+)?)|(0+(.0+)?))$ 或 ^(-([1-9]\d.\d|0.\d[1-9]\d))|0?.0+|0$</code></li>
+<li>正浮点数：<code>^[1-9]\d.\d|0.\d[1-9]\d$ 或 ^(([0-9]+.[0-9][1-9][0-9])|([0-9][1-9][0-9].[0-9]+)|([0-9][1-9][0-9]))$</code></li>
+<li>负浮点数：<code>^-([1-9]\d.\d|0.\d[1-9]\d)$ 或 ^(-(([0-9]+.[0-9][1-9][0-9])|([0-9][1-9][0-9].[0-9]+)|([0-9][1-9][0-9])))$</code></li>
+<li>浮点数：<code>^(-?\d+)(.\d+)?$ 或 ^-?([1-9]\d.\d|0.\d[1-9]\d|0?.0+|0)$</code></li>
+</ol>
+<hr>
+<h3 id="校验字符的表达式"><a href="#校验字符的表达式" class="headerlink" title="校验字符的表达式"></a>校验字符的表达式</h3><ol>
+<li>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></li>
+<li>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></li>
+<li>长度为3-20的所有字符：<code>^.{3,20}$</code></li>
+<li>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></li>
+<li>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></li>
+<li>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></li>
+<li>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></li>
+<li>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></li>
+<li>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></li>
+<li>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></li>
+<li>可以输入含有^%&amp;’,;=?$\”等字符：<code>[^%&amp;&#39;,;=?$\x22]+</code><br>12 禁止输入含有~的字符：<code>[^~\x22]+</code></li>
+</ol>
+<hr>
+<h3 id="特殊需求表达式"><a href="#特殊需求表达式" class="headerlink" title="特殊需求表达式"></a>特殊需求表达式</h3><ol>
+<li>Email地址：<code>^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$</code></li>
+<li>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></li>
+<li>InternetURL：<code>[a-zA-z]+://[^\s] 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=])?$</code></li>
+<li>手机号码：<code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</code></li>
+<li>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^((\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></li>
+<li>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></li>
+<li>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></li>
+<li>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></li>
+<li>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></li>
+<li>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></li>
+<li>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,10}$</code></li>
+<li>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></li>
+<li>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></li>
+<li>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></li>
+<li>钱的输入格式：<ol>
+<li>有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></li>
+<li>这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<code>^(0|[1-9][0-9]*)$</code></li>
+<li>一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<code>^(0|-?[1-9][0-9]*)$</code></li>
+<li>这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<code>^[0-9]+(.[0-9]+)?$</code></li>
+<li>必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<code>^[0-9]+(.[0-9]{2})?$</code></li>
+<li>这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<code>^[0-9]+(.[0-9]{1,2})?$</code></li>
+<li>这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<code>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</code></li>
+<li>1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<code>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</code><br><strong><strong>备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</strong></strong></li>
+</ol>
+</li>
+<li>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\.[x|X][m|M][l|L]$</code></li>
+<li>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></li>
+<li>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</li>
+<li>空白行的正则表达式：<code>\n\s*\r (可以用来删除空白行)</code></li>
+<li>HTML标记的正则表达式：<code>&lt;(\S?)[^&gt;]&gt;.?&lt;/\1&gt;|&lt;.? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</li>
+<li>首尾空白字符的正则表达式：<code>^\s|\s$或(^\s)|(\s$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</li>
+<li>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</li>
+<li>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</li>
+<li>IP地址：<code>\d+.\d+.\d+.\d+</code> (提取IP地址时有用)<br>25 IP地址：<code>((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</code></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[重新认识background]]></title>
       <url>http://yoursite.com/2016/10/19/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86background/</url>
       <content type="html"><![CDATA[<h4 id="自从学习前端以来，一直在加紧学习新的知识点，没有很深入的学习一个点。今天又接触background这个属性的时候，才发现很多内容都没有掌握好。趁此机会，再来温习一下！"><a href="#自从学习前端以来，一直在加紧学习新的知识点，没有很深入的学习一个点。今天又接触background这个属性的时候，才发现很多内容都没有掌握好。趁此机会，再来温习一下！" class="headerlink" title="自从学习前端以来，一直在加紧学习新的知识点，没有很深入的学习一个点。今天又接触background这个属性的时候，才发现很多内容都没有掌握好。趁此机会，再来温习一下！"></a>自从学习前端以来，一直在加紧学习新的知识点，没有很深入的学习一个点。今天又接触<code>background</code>这个属性的时候，才发现很多内容都没有掌握好。趁此机会，再来温习一下！</h4><a id="more"></a>
 <p>background属性包括有<code>background-color</code> background-image<code>`background-repeat</code> background-position<code>`background-size</code> background-origin<code>`background-clip</code> <code>background-attachment</code> 八个属性。</p>
 <hr>
 <h4 id="background-color最简单，这里就不再做过多的叙述。"><a href="#background-color最简单，这里就不再做过多的叙述。" class="headerlink" title="background-color最简单，这里就不再做过多的叙述。"></a><code>background-color</code>最简单，这里就不再做过多的叙述。</h4><hr>
-<h4 id="background-image-有三个参数。"><a href="#background-image-有三个参数。" class="headerlink" title="background-image 有三个参数。"></a><code>background-image</code> 有三个参数。</h4><h2 id="分别是url-，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"><a href="#分别是url-，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。" class="headerlink" title="* 分别是url()，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"></a>* 分别是url()，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。</h2><h4 id="background-repeat-有五个参数。"><a href="#background-repeat-有五个参数。" class="headerlink" title="background-repeat 有五个参数。"></a><code>background-repeat</code> 有五个参数。</h4><ul>
+<h4 id="background-image-有三个参数。"><a href="#background-image-有三个参数。" class="headerlink" title="background-image 有三个参数。"></a><code>background-image</code> 有三个参数。</h4><h2 id="分别是url，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"><a href="#分别是url，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。" class="headerlink" title="* 分别是url，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。"></a>* 分别是url，里面是图片的引用地址，无须使用引号括起来。第二个参数是none，不使用背景图片。第三个参数是inherit。</h2><h4 id="background-repeat-有五个参数。"><a href="#background-repeat-有五个参数。" class="headerlink" title="background-repeat 有五个参数。"></a><code>background-repeat</code> 有五个参数。</h4><ul>
 <li>分别是<code>repeat</code>，背景图片从垂直和水平方向重复。<code>repeat-x</code>背景从水平方向重复。<code>repeat-y</code>背景从垂直方面重复。<code>no-repeat</code>背景不重复。<code>inherit</code>继承父元素的<code>background-repeat</code>属性。<h5 id="background-position-有一个值，但是这个值有三种表述方式。"><a href="#background-position-有一个值，但是这个值有三种表述方式。" class="headerlink" title="background-position 有一个值，但是这个值有三种表述方式。"></a><code>background-position</code> 有一个值，但是这个值有三种表述方式。</h5></li>
 <li>分别是用方位来描述：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">top left</div><div class="line">top center</div><div class="line">top right</div><div class="line">center left</div><div class="line">center center</div><div class="line">center right</div><div class="line">bottom left</div><div class="line">bottom center</div><div class="line">bottom right;</div></pre></td></tr></table></figure>
 </li>
