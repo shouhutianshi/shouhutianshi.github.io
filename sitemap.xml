@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-11-15T00:59:24.891Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/27/Text3%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     
     <lastmod>2016-11-15T00:52:40.069Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2016/10/13/jquery-loadLazy/</loc>
     
     <lastmod>2016-10-17T07:46:25.097Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2016-10-17T07:07:20.446Z</lastmod>
     
   </url>
   
