@@ -3,8 +3,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/27/Text3%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2016-11-15T00:52:40.069Z</lastmod>
+    <data>
+        <display>
+        <title>ST3常用快捷键</title>
+        <pubTime>2016-10-27T06:03:05.000Z</pubTime>
+        
+        <tag>Sublime Text3 </tag>
+         
+         
+           
+             
+              <breadCrumb title="Sublime Text3" url="http://yoursite.com/categories/Sublime-Text3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/11/14/%E6%88%91%E7%BB%8F%E5%B8%B8%E7%94%A8%E7%9A%84ST3%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2016-11-14T09:08:27.491Z</lastmod>
+    <lastmod>2016-11-15T00:52:29.320Z</lastmod>
     <data>
         <display>
         <title>我经常用的ST3插件</title>
@@ -14,6 +34,9 @@
          
          
            
+             
+              <breadCrumb title="sublime text3" url="http://yoursite.com/categories/sublime-text3/"/>
+          
         </display>
     </data>
     </url>
@@ -33,26 +56,6 @@
            
              
               <breadCrumb title="jQuery" url="http://yoursite.com/categories/jQuery/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/27/Text3%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2016-10-27T07:23:49.212Z</lastmod>
-    <data>
-        <display>
-        <title>Text3常用快捷键</title>
-        <pubTime>2016-10-27T06:03:05.000Z</pubTime>
-        
-        <tag>Sublime Text3 </tag>
-         
-         
-           
-             
-              <breadCrumb title="Sublime Text3" url="http://yoursite.com/categories/Sublime-Text3/"/>
           
         </display>
     </data>
