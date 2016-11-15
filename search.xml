@@ -457,15 +457,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>http://yoursite.com/about/index.html</url>
-      <content type="html"><![CDATA[<h1 id="写些什么好呢？"><a href="#写些什么好呢？" class="headerlink" title="写些什么好呢？"></a>写些什么好呢？</h1>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[categories]]></title>
       <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>http://yoursite.com/about/index.html</url>
+      <content type="html"><![CDATA[<h1 id="写些什么好呢？"><a href="#写些什么好呢？" class="headerlink" title="写些什么好呢？"></a>写些什么好呢？</h1>]]></content>
     </entry>
     
     <entry>
