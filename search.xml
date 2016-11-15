@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[(本博客的hexo配置文件和next配置文件)]]></title>
+      <url>http://yoursite.com/2016/11/15/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8Cnext%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-1/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[(本博客的hexo配置文件和next配置文件)]]></title>
+      <url>http://yoursite.com/2016/11/15/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8Cnext%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p><a href="http://of6mwl32w.bkt.clouddn.com/%28next%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%29_config.yml" target="_blank" rel="external">next配置文件</a><br><a href="http://of6mwl32w.bkt.clouddn.com/_config.yml" target="_blank" rel="external">hexo配置文件</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[我经常用的ST3插件]]></title>
       <url>http://yoursite.com/2016/11/14/%E6%88%91%E7%BB%8F%E5%B8%B8%E7%94%A8%E7%9A%84ST3%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h4 id="平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。"><a href="#平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。" class="headerlink" title="平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。"></a>平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。</h4><a id="more"></a>
@@ -457,15 +470,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[about]]></title>
       <url>http://yoursite.com/about/index.html</url>
       <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>

@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://yoursite.com/2016/11/15/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8Cnext%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-1/</loc>
+    <lastmod>2016-11-15T01:18:50.413Z</lastmod>
+    <data>
+        <display>
+        <title>(本博客的hexo配置文件和next配置文件)</title>
+        <pubTime>2016-11-15T01:18:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/15/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8Cnext%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2016-11-15T01:18:47.056Z</lastmod>
+    <data>
+        <display>
+        <title>(本博客的hexo配置文件和next配置文件)</title>
+        <pubTime>2016-11-15T01:10:46.000Z</pubTime>
+        
+        <tag>配置文件 </tag>
+         
+         
+           
+             
+              <breadCrumb title="配置文件" url="http://yoursite.com/categories/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://yoursite.com/2016/10/27/Text3%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
