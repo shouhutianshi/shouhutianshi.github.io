@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[(更改浏览器默认的滚动条样式)]]></title>
       <url>http://yoursite.com/2016/11/22/%E6%9B%B4%E6%94%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E9%BB%98%E8%AE%A4%E7%9A%84%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/</url>
-      <content type="html"><![CDATA[<p>今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的<code>style</code>，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<h5 id="今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的style，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。"><a href="#今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的style，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。" class="headerlink" title="今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的style，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。"></a>今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的<code>style</code>，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。</h5><a id="more"></a>
 <h5 id="滚动条的组成"><a href="#滚动条的组成" class="headerlink" title="滚动条的组成"></a>滚动条的组成</h5><ul>
 <li><code>::-webkit-scrollbar</code> 滚动条的整体部分。</li>
 <li><code>::-webkit-scrollbar-thumb</code> 滚动条里的小方块。</li>
@@ -487,14 +487,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
