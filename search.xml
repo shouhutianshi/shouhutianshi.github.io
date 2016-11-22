@@ -4,6 +4,23 @@
   
     
     <entry>
+      <title><![CDATA[(更改浏览器默认的滚动条样式)]]></title>
+      <url>http://yoursite.com/2016/11/22/%E6%9B%B4%E6%94%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E9%BB%98%E8%AE%A4%E7%9A%84%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<p>今天在做专题的时候意识到浏览器的默认滚动条有点丑陋，于是google了下能否更改的问题。不出意料，确实有这样的<code>style</code>，不过是某些浏览器的私有样式。我在这里贴出来，让自己长长记性。<br><a id="more"></a></p>
+<h5 id="滚动条的组成"><a href="#滚动条的组成" class="headerlink" title="滚动条的组成"></a>滚动条的组成</h5><ul>
+<li><code>::-webkit-scrollbar</code> 滚动条的整体部分。</li>
+<li><code>::-webkit-scrollbar-thumb</code> 滚动条里的小方块。</li>
+<li><code>::-webkit-scrollbar-track</code> 滚动条里的轨道，小方块就在这里上下或者左右移动。</li>
+<li><code>::-webkit-scrollbar-button</code>滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。</li>
+<li><code>::-webkit-scrollbar-track-piece</code> 内层轨道,大概是除了两端按钮之外的轨道。</li>
+<li><code>::-webkit-scrollbar-corner</code> 边角，即连个轨道的交汇处。</li>
+<li><code>::-webkit-resizer</code> 两个滚动条交汇处上用于通过拖动调整元素大小的小控件。</li>
+</ul>
+<p>demo在此。<a href="http://of6mwl32w.bkt.clouddn.com/demo.html" target="_blank" rel="external">点我</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[(本博客的hexo配置文件和next配置文件)]]></title>
       <url>http://yoursite.com/2016/11/15/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8Cnext%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
       <content type="html"><![CDATA[<p><a href="http://of6mwl32w.bkt.clouddn.com/%28next%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%29_config.yml" target="_blank" rel="external">next配置文件</a><br><a href="http://of6mwl32w.bkt.clouddn.com/_config.yml" target="_blank" rel="external">hexo配置文件</a></p>
@@ -464,15 +481,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[about]]></title>
       <url>http://yoursite.com/about/index.html</url>
       <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
