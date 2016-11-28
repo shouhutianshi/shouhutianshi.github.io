@@ -1,0 +1,936 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="51f8c31a238c01b8" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(webpack学习小结)">
+<meta property="og:url" content="http://yoursite.com/2016/11/28/webpack学习小结/index.html">
+<meta property="og:site_name" content="XiaoYang的博客">
+<meta property="og:description" content="最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~">
+<meta property="og:updated_time" content="2016-11-28T07:57:02.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(webpack学习小结)">
+<meta name="twitter:description" content="最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/28/webpack学习小结/"/>
+
+  <title> (webpack学习小结) | XiaoYang的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">XiaoYang的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">在这里沉淀思维</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                (webpack学习小结)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-28T10:56:47+08:00" content="2016-11-28">
+              2016-11-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/28/webpack学习小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/28/webpack学习小结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="最近在学习vue-js，里面既涉及到babel、es6、webpack、node-js、还有route，这些东西除了node-js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue-js学好，必须得一个个击破。先从webpack开始"><a href="#最近在学习vue-js，里面既涉及到babel、es6、webpack、node-js、还有route，这些东西除了node-js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue-js学好，必须得一个个击破。先从webpack开始" class="headerlink" title="最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~"></a>最近在学习<code>vue.js</code>，里面既涉及到<code>babel</code>、<code>es6</code>、<code>webpack</code>、<code>node.js</code>、还有<code>route</code>，这些东西除了<code>node.js</code>对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把<code>vue.js</code>学好，必须得一个个击破。先从<code>webpack</code>开始~</h4><a id="more"></a>
+<h5 id="两个最基本的命令"><a href="#两个最基本的命令" class="headerlink" title="两个最基本的命令"></a>两个最基本的命令</h5><p><code>npm install -g webpack</code> 全局安装<br><code>npm install --save-dev webpack</code> 安装到所在项目中的目录</p>
+<h5 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h5><p>项目开始前，<code>npm init</code>初始化，在文件夹中会产生一个<code>package.json</code>。一般如果项目并不发布的话，终端的一些提示信息可以忽略，一路安装到底。</p>
+<ol>
+<li><p><code>package.json</code>生成以后，在本项目中安装<code>webpack</code>作为依赖包注入。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev webpack</div></pre></td></tr></table></figure>
+</li>
+<li><p>一般我们会在项目中新建两个文件夹。这里暂时命令为<code>app</code>、<code>public</code>，<code>app</code>文件夹作为存放原始数据文件夹，一般我们会放入<code>index.html</code>、<code>js</code>、<code>css</code>或者还可以有<code>img</code>，由于<code>webpack</code>不擅长处理图片，一般在这里我们放入需要压缩的图片,在<code>app</code>中新建<code>main.js</code>作为入口文件。而<code>public</code>文件夹中作为接收<code>webpack</code>处理过后的文件。</p>
+</li>
+</ol>
+<h5 id="修改webpack配置文件"><a href="#修改webpack配置文件" class="headerlink" title="修改webpack配置文件"></a>修改<code>webpack</code>配置文件</h5><p>我们在根目录下新建一个<code>js</code>文件作为<code>webpack</code>的配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h5><ol>
+<li><p>没有配置文件的情况下：</p>
+<p> <code>webpack</code>的命令是<code>webpack {entry file/入口文件} {destination for bundle file/存放bundle.js的地方}</code><br>最好<code>webpack</code>进行全局安装，不然要执行命令<code>node_modules/.bin webpack {entry file/入口文件} {destination for bundle file/存放bundle.js的地方}</code></p>
+</li>
+<li><p>上面我们修改了配置文件，这样我们可以简化<code>webpack</code>命令<br> 只需执行<code>wepack</code>，没有进行全局安装的，要输入<code>node_module/.bin webpack</code></p>
+</li>
+</ol>
+<h5 id="webpack生成Source-Maps"><a href="#webpack生成Source-Maps" class="headerlink" title="webpack生成Source Maps"></a><code>webpack</code>生成<code>Source Maps</code></h5><table>
+<thead>
+<tr>
+<th>devtool选项</th>
+<th>配置结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source-map</td>
+<td>在一个单独的文件中产生一个完整且功能完全的文件。这个文件具有最好的source map，但是它会减慢打包文件的构建速度</td>
+</tr>
+<tr>
+<td>cheap-module-source-map</td>
+<td>在一个单独的文件中生成一个不带列映射的map，不带列映射提高项目构建速度，但是也使得浏览器开发者工具只能对应到具体的行，不能对应到具体的列（符号），会对调试造成不便</td>
+</tr>
+<tr>
+<td>eval-source-map</td>
+<td>使用eval打包源文件模块，在同一个文件中生成干净的完整的source map。这个选项可以在不影响构建速度的前提下生成完整的sourcemap，但是对打包后输出的JS文件的执行具有性能和安全的隐患。不过在开发阶段这是一个非常好的选项，但是在生产阶段一定不要用这个选项</td>
+</tr>
+<tr>
+<td>cheap-module-eval-source-map</td>
+<td>这是在打包文件时最快的生成source map的方法，生成的Source Map 会和打包后的JavaScript文件同行显示，没有列映射，和eval-source-map选项具有相似的缺点</td>
+</tr>
+</tbody>
+</table>
+<p>因此我们在中小型项目中，最后配置<code>eval-source-map</code>选项。配置文件在上面的基础上修改为：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h5 id="构建本地服务器"><a href="#构建本地服务器" class="headerlink" title="构建本地服务器"></a>构建本地服务器</h5><p>让浏览器监测本地文件的修改，并自动刷新浏览器。</p>
+<ol>
+<li>安装<code>npm install --save-dev wepack-dev-server</code>。它的配置项有四项：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>devserver配置选项</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contentBase</td>
+<td>默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录</td>
+</tr>
+<tr>
+<td>port</td>
+<td>设置监听端口。如果省略，端口号为<code>8080</code></td>
+</tr>
+<tr>
+<td>inline</td>
+<td>设置为<code>true</code>，当源文件改变时，自动刷新页面</td>
+</tr>
+<tr>
+<td>colors</td>
+<td>设置为<code>true</code>，使终端输出的文件为彩色</td>
+</tr>
+<tr>
+<td>historyApiFallback</td>
+<td>在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html</td>
+</tr>
+</tbody>
+</table>
+<p>现在配置文件修改为：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  module.exports = &#123;</div><div class="line">  devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;,</div><div class="line">    devserver : &#123;</div><div class="line">      contentBase:　&quot;./public&quot;,</div><div class="line">      colors: true,</div><div class="line">      inline: true,</div><div class="line">      historyApiFallback: false</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h5 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h5><p>通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如说分析JSON文件并把它转换为JavaScript文件，或者说把下一代的JS文件（ES6，ES7)转换为现代浏览器可以识别的JS文件。</p>
+<ol>
+<li><p>通过命令安装<code>npm install --save-dev json-loader</code>。修改配置文件为：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">  module.exports = &#123;</div><div class="line">  devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;,</div><div class="line">    devserver : &#123;</div><div class="line">      contentBase:　&quot;./public&quot;,</div><div class="line">      colors: true,</div><div class="line">      inline: true,</div><div class="line">      historyApiFallback: false</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: &#123;</div><div class="line">            test: /\.json/,</div><div class="line">            loader: &quot;json&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>loaders</code>一般配置项有四个选项：</p>
+<p> loader选项 |　功能说明<br> — | —<br> test | 一个匹配loaders所处理的文件的拓展名的正则表达式（必须）<br> loader | loader的名称<br> include/exclude |手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）<br> query | 为loaders提供额外的设置选项（可选）</p>
+</li>
+</ol>
+<h6 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a><code>Babel</code></h6><p>它也是一个<code>loader</code>，作用是将<code>es6</code>转化为<code>es5</code>。安装命令为<code>npm install --save-dev babel-core babel-loader babel-preset-es2015</code>。配置项修改为</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">  module.exports = &#123;</div><div class="line">  devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;,</div><div class="line">    devserver : &#123;</div><div class="line">      contentBase:　&quot;./public&quot;,</div><div class="line">      colors: true,</div><div class="line">      inline: true,</div><div class="line">      historyApiFallback: false</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;</div><div class="line">                test: /\.json$/,</div><div class="line">                loader: &quot;json&quot;</div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                test: &quot;/\.js$/&quot;,</div><div class="line">                loader: &quot;babel&quot;,</div><div class="line">                exclude: /node_modules/,</div><div class="line">                query: [&apos;es2015&apos;]</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h5 id="CSS处理"><a href="#CSS处理" class="headerlink" title="CSS处理"></a>CSS处理</h5><p>webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。</p>
+<ol>
+<li><p>通过<code>npm install --save-dev style-loader css-loader</code>命令安装。配置项修改为</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">  module.exports = &#123;</div><div class="line">  devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname + &quot;/public&quot;,</div><div class="line">        filename:　bundle.js</div><div class="line">    &#125;,</div><div class="line">    devserver : &#123;</div><div class="line">      contentBase:　&quot;./public&quot;,</div><div class="line">      colors: true,</div><div class="line">      inline: true,</div><div class="line">      historyApiFallback: false</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;</div><div class="line">                test: /\.json$/,</div><div class="line">                loader: &quot;json&quot;</div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                test: &quot;/\.js$/&quot;,</div><div class="line">                loader: &quot;babel&quot;,</div><div class="line">                exclude: /node_modules/,</div><div class="line">                query: [&apos;es2015&apos;]</div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                test: /\.css$/,</div><div class="line">                loader: &quot;css!style&quot;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em> 感叹号的作用在于使同一文件能够使用不同类型的loader    </em></strong></p>
+<ol>
+<li>我们在入口文件<code>main.js</code>中导入<code>style.css</code>文件，命令为<code>require(&#39;./style.css&#39;)</code></li>
+</ol>
+<h5 id="CSS预处理器"><a href="#CSS预处理器" class="headerlink" title="CSS预处理器"></a>CSS预处理器</h5><p>一般css预处理器有三个，分别为<code>Less loader</code>、<code>Sass loader</code>、<code>Stylus loader</code>。和上面一样，修改配置选项即可。<br>不过这里要安装另外一个css处理平台–<code>PostCSS</code>,它可以帮助你的css实现更多功能。</p>
+<ol>
+<li><p>安装。<code>npm install --save-dev postcss-loader autoporefixer</code>,修改配置：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    devtool: &quot;eval-source-map&quot;,</div><div class="line">    entry: __dirname + &quot;/app/main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">      path: __dirname + &quot;/public&quot;,</div><div class="line">      filename:　bundle.js</div><div class="line">    &#125;,</div><div class="line">    devserver : &#123;</div><div class="line">        contentBase:　&quot;./public&quot;,</div><div class="line">        colors: true,</div><div class="line">        inline: true,</div><div class="line">        historyApiFallback: false</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">          loaders: [</div><div class="line">              &#123;</div><div class="line">                  test: /\.json$/,</div><div class="line">                  loader: &quot;json&quot;</div><div class="line">              &#125;,</div><div class="line">              &#123;</div><div class="line">                  test: &quot;/\.js$/&quot;,</div><div class="line">                  loader: &quot;babel&quot;,</div><div class="line">                  exclude: /node_modules/,</div><div class="line">                  query: [&apos;es2015&apos;]</div><div class="line">              &#125;,</div><div class="line">              &#123;</div><div class="line">                  test: /\.css$/,</div><div class="line">                  loader: &quot;css!style!postcss&quot;</div><div class="line">              &#125;,</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">         postcss: [</div><div class="line">             require(&apos;autoprefixer&apos;)</div><div class="line">        ]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a><code>plugins</code></h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag">#webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/22/更改浏览器默认的滚动条样式/" rel="next" title="(更改浏览器默认的滚动条样式)">
+                <i class="fa fa-chevron-left"></i> (更改浏览器默认的滚动条样式)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          <!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>
+<!-- 多说评论框 end -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"tohere"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="XiaoYang" />
+          <p class="site-author-name" itemprop="name">XiaoYang</p>
+          <p class="site-description motion-element" itemprop="description">如无必要，勿增实体</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shouhutianshi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3016448681/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#最近在学习vue-js，里面既涉及到babel、es6、webpack、node-js、还有route，这些东西除了node-js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue-js学好，必须得一个个击破。先从webpack开始"><span class="nav-number">1.</span> <span class="nav-text">最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#两个最基本的命令"><span class="nav-number">1.1.</span> <span class="nav-text">两个最基本的命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#准备"><span class="nav-number">1.2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改webpack配置文件"><span class="nav-number">1.3.</span> <span class="nav-text">修改webpack配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成文件"><span class="nav-number">1.4.</span> <span class="nav-text">生成文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack生成Source-Maps"><span class="nav-number">1.5.</span> <span class="nav-text">webpack生成Source Maps</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构建本地服务器"><span class="nav-number">1.6.</span> <span class="nav-text">构建本地服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#loaders"><span class="nav-number">1.7.</span> <span class="nav-text">loaders</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Babel"><span class="nav-number">1.7.1.</span> <span class="nav-text">Babel</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS处理"><span class="nav-number">1.8.</span> <span class="nav-text">CSS处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS预处理器"><span class="nav-number">1.9.</span> <span class="nav-text">CSS预处理器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#plugins"><span class="nav-number">2.</span> <span class="nav-text">plugins</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoYang</span>
+</div>
+ <span id="busuanzi_container_page_pv">
+    欢迎光临本站，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+&nbsp;&nbsp;
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260642686'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260642686' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'tohere';
+      var disqus_identifier = '2016/11/28/webpack学习小结/';
+      var disqus_title = "(webpack学习小结)";
+      var disqus_url = 'http://yoursite.com/2016/11/28/webpack学习小结/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
