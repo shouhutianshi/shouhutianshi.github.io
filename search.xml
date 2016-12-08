@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[(一点心得笔记)]]></title>
       <url>http://yoursite.com/2016/12/08/%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<p>这几天做专题的时候，遇到很多问题。做个笔记加深印象。<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<h4 id="这几天做专题的时候，遇到很多问题。做个笔记加深印象。"><a href="#这几天做专题的时候，遇到很多问题。做个笔记加深印象。" class="headerlink" title="这几天做专题的时候，遇到很多问题。做个笔记加深印象。"></a>这几天做专题的时候，遇到很多问题。做个笔记加深印象。</h4><a id="more"></a>
 <ol>
 <li>在火狐和chrome中，取卷积的高度时，两者有明显的区别。<ul>
 <li>FF中<code>document.documentElement.scollTop</code>取得，它要从根元素获取；</li>
@@ -15,8 +15,9 @@
 </li>
 <li>写判断时，一定要选好边界；</li>
 <li>DOM中，<code>setAtrribute</code>可以同时设置多个属性，如果是同一个属性就覆盖掉。当然，由于现在前端技术的发展，MVVM框架的发展，最后利用数据驱动，不要直接操纵DOM。</li>
-<li>我发现<code>keyframes</code>动画有的在chrome上运行良好，但是在FF中运行不了，google和百度都发现了类似问题。这个问题我还没有解决，一方面英文看的有点吃力，一方面，昨晚喝了点酒，头晕晕的，实在不想看了。<br><strong><em> 就写这么多吧  </em></strong></li>
+<li>我发现<code>keyframes</code>动画有的在chrome上运行良好，但是在FF中运行不了，google和百度都发现了类似问题。这个问题我还没有解决，一方面英文看的有点吃力，一方面，昨晚喝了点酒，头晕晕的，实在不想看了。</li>
 </ol>
+<p><strong><em> 就写这么多吧  </em></strong></p>
 ]]></content>
     </entry>
     
