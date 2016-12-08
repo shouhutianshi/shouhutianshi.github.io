@@ -4,6 +4,23 @@
   
     
     <entry>
+      <title><![CDATA[(一点心得笔记)]]></title>
+      <url>http://yoursite.com/2016/12/08/%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>这几天做专题的时候，遇到很多问题。做个笔记加深印象。<br><a id="more"></a></p>
+<ol>
+<li>在火狐和chrome中，取卷积的高度时，两者有明显的区别。<ul>
+<li>FF中<code>document.documentElement.scollTop</code>取得，它要从根元素获取；</li>
+<li>chrome中<code>document.body.scrollTop</code>取得，它要从<code>body</code>元素上获取。</li>
+</ul>
+</li>
+<li>写判断时，一定要选好边界；</li>
+<li>DOM中，<code>setAtrribute</code>可以同时设置多个属性，如果是同一个属性就覆盖掉。当然，由于现在前端技术的发展，MVVM框架的发展，最后利用数据驱动，不要直接操纵DOM。</li>
+<li>我发现<code>keyframes</code>动画有的在chrome上运行良好，但是在FF中运行不了，google和百度都发现了类似问题。这个问题我还没有解决，一方面英文看的有点吃力，一方面，昨晚喝了点酒，头晕晕的，实在不想看了。<br><strong><em> 就写这么多吧  </em></strong></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[(webpack学习小结)]]></title>
       <url>http://yoursite.com/2016/11/28/webpack%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
       <content type="html"><![CDATA[<h4 id="最近在学习vue-js，里面既涉及到babel、es6、webpack、node-js、还有route，这些东西除了node-js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue-js学好，必须得一个个击破。先从webpack开始"><a href="#最近在学习vue-js，里面既涉及到babel、es6、webpack、node-js、还有route，这些东西除了node-js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue-js学好，必须得一个个击破。先从webpack开始" class="headerlink" title="最近在学习vue.js，里面既涉及到babel、es6、webpack、node.js、还有route，这些东西除了node.js对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把vue.js学好，必须得一个个击破。先从webpack开始~"></a>最近在学习<code>vue.js</code>，里面既涉及到<code>babel</code>、<code>es6</code>、<code>webpack</code>、<code>node.js</code>、还有<code>route</code>，这些东西除了<code>node.js</code>对我来说不算新鲜，其他的接触的特别少，其他的都是第一次接触。既然想把<code>vue.js</code>学好，必须得一个个击破。先从<code>webpack</code>开始~</h4><a id="more"></a>
@@ -597,9 +614,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
-      <content type="html"></content>
+      <title><![CDATA[about]]></title>
+      <url>http://yoursite.com/about/index.html</url>
+      <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
     </entry>
     
     <entry>
@@ -609,9 +626,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>http://yoursite.com/about/index.html</url>
-      <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
