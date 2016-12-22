@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[(meta头之缓存部分)]]></title>
+      <url>http://yoursite.com/2016/12/22/meta%E5%A4%B4%E4%B9%8B%E7%BC%93%E5%AD%98%E9%83%A8%E5%88%86/</url>
+      <content type="html"><![CDATA[<h4 id="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下："><a href="#每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：" class="headerlink" title="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下："></a>每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：</h4><a id="more"></a>
+<h5 id="lt-meta-http-equiv-quot-pragma-quot-content-quot-no-cache-quot-gt"><a href="#lt-meta-http-equiv-quot-pragma-quot-content-quot-no-cache-quot-gt" class="headerlink" title="&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;"></a><code>&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</code></h5><p><code>pragma</code>与<code>no-cache</code>用于定义页面缓存。不缓存页面，这样浏览器就无法脱机浏览了。</p>
+<h5 id="lt-meta-http-equiv-quot-cache-control-quot-content-quot-quot-gt"><a href="#lt-meta-http-equiv-quot-cache-control-quot-content-quot-quot-gt" class="headerlink" title="&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;&quot;&gt;"></a><code>&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;&quot;&gt;</code></h5><p><code>content</code>常见的取值有<code>private</code>、<code>no-cache</code>、<code>max-age</code>、<code>must-revalidate</code><br>等，默认为<code>private</code>，其作用根据不同的重新浏览方式分为以下几种情况：</p>
+<ol>
+<li>值为<code>private</code>、<code>no-cache</code>、<code>must-revalidate</code>时，打开新窗口都会重新访问服务器。而如果指定了<code>max-age</code>，那么在此值内的时间里就不会重新访问服务器。例如：<code>cache-control:max-age=5</code>，此时访问此网页的<code>5s</code>内浏览器不会重新访问服务器。</li>
+<li>在地址栏回车时，值为<code>private</code>、<code>must-revalidate</code>只有在第一次访问时会访问服务器，以后不在访问。值为<code>no-cache</code>时，每次都访问。<br>值为<code>max-age</code>时，则在过期之前不会重复访问。</li>
+<li>按后退按钮时，值为<code>private</code>、<code>must-revalidate</code>、<code>max-age</code>时，不会重新访问服务器，值为<code>no-cache</code>时，则每次都会重复访问服务器。</li>
+<li>按刷新按钮，都会重复访问。而值为<code>no-cache</code>时，访问此页年不会在Internet临时文件夹留下页面备份。<h5 id="expires"><a href="#expires" class="headerlink" title="expires"></a><code>expires</code></h5></li>
+</ol>
+<ul>
+<li><code>&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;</code>,指定<code>Expires</code>值为一个早已过去的时间，此时访问访问网站，若在地址栏按回车，那么每次都会重复访问。<code>content</code>里面是一个时间，比如”Wed Dec 21 2016 17:21:39 GMT+0800 (中国标准时间)”。</li>
+</ul>
+<p>未完待续……</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[(闭包问题的一点认识)]]></title>
       <url>http://yoursite.com/2016/12/22/%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%A4%E8%AF%86/</url>
       <content type="html"><![CDATA[<h4 id="今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。"><a href="#今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。" class="headerlink" title="今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。"></a>今天在做一个页面时，里面有多个倒计时器。期间因为要用到<code>for</code>循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。</h4><a id="more"></a>
@@ -626,12 +645,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[tags]]></title>
       <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
@@ -641,6 +654,12 @@
       <title><![CDATA[about]]></title>
       <url>http://yoursite.com/about/index.html</url>
       <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
