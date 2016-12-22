@@ -80,6 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="js," />
 
 
 
@@ -92,16 +93,17 @@
 
 
 
-<meta name="description" content="如无必要，勿增实体">
+
+<meta name="description" content="今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(终于完成啦)">
-<meta property="og:url" content="http://yoursite.com/2016/09/28/终于完成啦/index.html">
+<meta property="og:title" content="(闭包问题的一点认识)">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/闭包问题的一点认识/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="如无必要，勿增实体">
-<meta property="og:updated_time" content="2016-09-28T07:17:25.371Z">
+<meta property="og:description" content="今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。">
+<meta property="og:updated_time" content="2016-12-22T04:57:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(终于完成啦)">
-<meta name="twitter:description" content="如无必要，勿增实体">
+<meta name="twitter:title" content="(闭包问题的一点认识)">
+<meta name="twitter:description" content="今天在做一个页面时，里面有多个倒计时器。期间因为要用到for循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。">
 
 
 
@@ -122,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/28/终于完成啦/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/22/闭包问题的一点认识/"/>
 
-  <title> (终于完成啦) | XiaoYang的博客 </title>
+  <title> (闭包问题的一点认识) | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +289,7 @@
             
             
               
-                (终于完成啦)
+                (闭包问题的一点认识)
               
             
           </h1>
@@ -299,19 +301,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T15:17:25+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-12-22T12:57:10+08:00" content="2016-12-22">
+              2016-12-22
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/终于完成啦/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/28/终于完成啦/" itemprop="commentsCount"></span>
+                <a href="/2016/12/22/闭包问题的一点认识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/22/闭包问题的一点认识/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -334,7 +355,11 @@
       
 
       
-        
+        <p>今天在做一个页面时，里面有多个倒计时器。期间因为要用到<code>for</code>循环，而且要保持状态，不小心陷入了闭包概念中。当时测试了好一会儿也没搞明白怎么回事儿，回来翻看《高级程序设计》和《JavaScript面向对象编程指南》关于闭包的章节，细读了一会儿，应该在我现阶段算是彻底了明白了什么叫闭包（不知道后面程序写的更长闭包会是什么样子的，至少我现在的工作还没有碰到！）。<br><a id="more"></a><br>先是翻看廖雪峰的关于关于<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449934543461c9d5dfeeb848f5b72bd012e1113d15000" target="_blank" rel="external">JavaScript</a>的教程，里面有一句话：<strong> 返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</strong><br>接下来在《高级程序设计》中看到这样的一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function createFunctions() &#123;</div><div class="line">    var result = new Array();</div><div class="line"></div><div class="line">    for (var i = 0; i &lt; 10; i++) &#123;</div><div class="line">        result[i] = function(num) &#123;</div><div class="line">            return function() &#123;</div><div class="line">                return num;</div><div class="line">            &#125;</div><div class="line">        &#125;(i);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以这样调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var arr = createFunctions();</div><div class="line">var f1 = arr[0];</div><div class="line">var f2 = arr[1];</div><div class="line">var f3 = arr[2];</div><div class="line">...</div><div class="line"></div><div class="line">f1() //1</div><div class="line">f2() //2</div><div class="line">f3() //3</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>明确一点：闭包就是：<strong> 有权访问另外一个函数作用域的函数。一般都是内部函数访问外部函数作用域 </strong></p>
+<p>虽然明确了这一点，但是在前面说到的多个倒计时器的例子中，我并没有用到闭包，而是用的创建实例。这又让我感觉到面向对象编程的概念陌生了，还是要多练呀。。</p>
+
       
     </div>
 
@@ -354,18 +379,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/08/一点心得笔记/" rel="next" title="(一点心得笔记)">
+                <i class="fa fa-chevron-left"></i> (一点心得笔记)
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/29/JS十种排序算法（未完成）/" rel="prev" title="JS十种排序算法（未完成）">
-                JS十种排序算法（未完成） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,9 +663,9 @@ var duoshuoQuery = {short_name:"tohere"};
 
     <script type="text/javascript">
       var disqus_shortname = 'tohere';
-      var disqus_identifier = '2016/09/28/终于完成啦/';
-      var disqus_title = "(终于完成啦)";
-      var disqus_url = 'http://yoursite.com/2016/09/28/终于完成啦/';
+      var disqus_identifier = '2016/12/22/闭包问题的一点认识/';
+      var disqus_title = "(闭包问题的一点认识)";
+      var disqus_url = 'http://yoursite.com/2016/12/22/闭包问题的一点认识/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
