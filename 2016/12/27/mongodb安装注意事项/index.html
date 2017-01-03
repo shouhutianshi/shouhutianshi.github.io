@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="meta标签之缓存设置," />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -94,16 +94,16 @@
 
 
 
-<meta name="description" content="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：">
+<meta name="description" content="在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(meta头之缓存部分)">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/meta头之缓存部分/index.html">
+<meta property="og:title" content="(mongodb安装注意事项)">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/mongodb安装注意事项/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：">
-<meta property="og:updated_time" content="2016-12-22T05:05:48.130Z">
+<meta property="og:description" content="在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。">
+<meta property="og:updated_time" content="2016-12-27T09:34:11.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(meta头之缓存部分)">
-<meta name="twitter:description" content="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：">
+<meta name="twitter:title" content="(mongodb安装注意事项)">
+<meta name="twitter:description" content="在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。">
 
 
 
@@ -124,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/meta头之缓存部分/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/27/mongodb安装注意事项/"/>
 
-  <title> (meta头之缓存部分) | XiaoYang的博客 </title>
+  <title> (mongodb安装注意事项) | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +289,7 @@
             
             
               
-                (meta头之缓存部分)
+                (mongodb安装注意事项)
               
             
           </h1>
@@ -301,8 +301,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-22T13:03:26+08:00" content="2016-12-22">
-              2016-12-22
+            <time itemprop="dateCreated" datetime="2016-12-27T17:32:58+08:00" content="2016-12-27">
+              2016-12-27
             </time>
           </span>
 
@@ -315,8 +315,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/meta标签之缓存设置/" itemprop="url" rel="index">
-                    <span itemprop="name">meta标签之缓存设置</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -331,8 +331,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/22/meta头之缓存部分/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/22/meta头之缓存部分/" itemprop="commentsCount"></span>
+                <a href="/2016/12/27/mongodb安装注意事项/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/27/mongodb安装注意事项/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,19 +355,14 @@
       
 
       
-        <h4 id="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下："><a href="#每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：" class="headerlink" title="每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下："></a>每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：</h4><a id="more"></a>
-<h5 id="lt-meta-http-equiv-quot-pragma-quot-content-quot-no-cache-quot-gt"><a href="#lt-meta-http-equiv-quot-pragma-quot-content-quot-no-cache-quot-gt" class="headerlink" title="&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;"></a><code>&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</code></h5><p><code>pragma</code>与<code>no-cache</code>用于定义页面缓存。不缓存页面，这样浏览器就无法脱机浏览了。</p>
-<h5 id="lt-meta-http-equiv-quot-cache-control-quot-content-quot-quot-gt"><a href="#lt-meta-http-equiv-quot-cache-control-quot-content-quot-quot-gt" class="headerlink" title="&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;&quot;&gt;"></a><code>&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;&quot;&gt;</code></h5><p><code>content</code>常见的取值有<code>private</code>、<code>no-cache</code>、<code>max-age</code>、<code>must-revalidate</code><br>等，默认为<code>private</code>，其作用根据不同的重新浏览方式分为以下几种情况：</p>
-<ol>
-<li>值为<code>private</code>、<code>no-cache</code>、<code>must-revalidate</code>时，打开新窗口都会重新访问服务器。而如果指定了<code>max-age</code>，那么在此值内的时间里就不会重新访问服务器。例如：<code>cache-control:max-age=5</code>，此时访问此网页的<code>5s</code>内浏览器不会重新访问服务器。</li>
-<li>在地址栏回车时，值为<code>private</code>、<code>must-revalidate</code>只有在第一次访问时会访问服务器，以后不在访问。值为<code>no-cache</code>时，每次都访问。<br>值为<code>max-age</code>时，则在过期之前不会重复访问。</li>
-<li>按后退按钮时，值为<code>private</code>、<code>must-revalidate</code>、<code>max-age</code>时，不会重新访问服务器，值为<code>no-cache</code>时，则每次都会重复访问服务器。</li>
-<li>按刷新按钮，都会重复访问。而值为<code>no-cache</code>时，访问此页年不会在Internet临时文件夹留下页面备份。<h5 id="expires"><a href="#expires" class="headerlink" title="expires"></a><code>expires</code></h5></li>
+        <h4 id="在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。"><a href="#在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。" class="headerlink" title="在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。"></a>在安装<code>mongodb</code>时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。</h4><a id="more"></a>
+<h5 id="安装mongodb一般分为以下几个步骤："><a href="#安装mongodb一般分为以下几个步骤：" class="headerlink" title="安装mongodb一般分为以下几个步骤："></a>安装<code>mongodb</code>一般分为以下几个步骤：</h5><ol>
+<li>进入<code>www.mongo.org</code>下载匹配的安装包；</li>
+<li>软件安装和普通<code>.exe</code>安装差不多，中间我选择的是<code>custom</code>，这样就可以把数据库安装在<code>d</code>盘，我的路径是<code>D:\mongodb\</code>;</li>
+<li>在<code>D:\mongodb\</code>中，新建两个文件夹，分别是<code>data</code> <code>logs</code>，一个是存放数据，一个存放日志；</li>
+<li>打开<code>cmd</code>，切换到<code>d:\mongodb\bin\</code>，输入<code>mongod --dbpath &quot;D:\mongodb\data&quot; --logpath &quot;D:\mongodb\logs\mongo.log&quot; --install --serviceName &quot;mongodb&quot;</code>，就可以绑定数据文件夹和日志文件夹了，并且还绑定了<code>windows</code>服务。可以使用<code>net start mongodb</code>和<code>net stop mongodb</code>;</li>
+<li>当然，我们在环境变量中添加<code>D:\mongodb\;</code>和<code>D:\mongodb\bin;</code>这样就可以全局使用<code>mongod</code>和<code>mongo.exe</code>了。<br><strong>  一般出现问题的原因是没有用管理员权限打开 cmd </strong></li>
 </ol>
-<ul>
-<li><code>&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;</code>,指定<code>Expires</code>值为一个早已过去的时间，此时访问访问网站，若在地址栏按回车，那么每次都会重复访问。<code>content</code>里面是一个时间，比如”Wed Dec 21 2016 17:21:39 GMT+0800 (中国标准时间)”。</li>
-</ul>
-<p>未完待续……</p>
 
       
     </div>
@@ -390,7 +385,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/meta标签之缓存设置/" rel="tag">#meta标签之缓存设置</a>
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
           
         </div>
       
@@ -399,17 +394,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/闭包问题的一点认识/" rel="next" title="(闭包问题的一点认识)">
-                <i class="fa fa-chevron-left"></i> (闭包问题的一点认识)
+              <a href="/2016/12/22/meta头之缓存部分/" rel="next" title="(meta头之缓存部分)">
+                <i class="fa fa-chevron-left"></i> (meta头之缓存部分)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/27/mongodb安装注意事项/" rel="prev" title="(mongodb安装注意事项)">
-                (mongodb安装注意事项) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +551,7 @@ var duoshuoQuery = {short_name:"tohere"};
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下："><span class="nav-number">1.</span> <span class="nav-text">每次更新了网页都不能立即看到效果，于是查了下网页头如何设置缓存，现整理如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-meta-http-equiv-quot-pragma-quot-content-quot-no-cache-quot-gt"><span class="nav-number">1.1.</span> <span class="nav-text"><meta http-equiv="pragma" content="no-cache"></span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-meta-http-equiv-quot-cache-control-quot-content-quot-quot-gt"><span class="nav-number">1.2.</span> <span class="nav-text"><meta http-equiv="cache-control" content=""></span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#expires"><span class="nav-number">1.3.</span> <span class="nav-text">expires</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。"><span class="nav-number">1.</span> <span class="nav-text">在安装mongodb时，我们一般需要开了两个窗口，一个是服务器端，一个是客户端，略显麻烦。我们可以将命令添加到windows服务器上，还可以添加环境变量。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装mongodb一般分为以下几个步骤："><span class="nav-number">1.1.</span> <span class="nav-text">安装mongodb一般分为以下几个步骤：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -676,9 +667,9 @@ var duoshuoQuery = {short_name:"tohere"};
 
     <script type="text/javascript">
       var disqus_shortname = 'tohere';
-      var disqus_identifier = '2016/12/22/meta头之缓存部分/';
-      var disqus_title = "(meta头之缓存部分)";
-      var disqus_url = 'http://yoursite.com/2016/12/22/meta头之缓存部分/';
+      var disqus_identifier = '2016/12/27/mongodb安装注意事项/';
+      var disqus_title = "(mongodb安装注意事项)";
+      var disqus_url = 'http://yoursite.com/2016/12/27/mongodb安装注意事项/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
