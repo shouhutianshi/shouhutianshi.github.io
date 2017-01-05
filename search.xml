@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[(还记得offset-*/client-*/scroll-*吗？)]]></title>
+      <url>http://yoursite.com/2017/01/05/%E8%BF%98%E8%AE%B0%E5%BE%97offset-client-scroll-%E5%90%97%EF%BC%9F/</url>
+      <content type="html"><![CDATA[<h4 id="每次遇到offsetWidth、offsetHeight、offsetTop、offsetLeft等等就一阵头疼，倒不是因为复杂的原因，只是这几个名词实在是太难分辨了。今天碰到一种依赖“scrollTop”的动画效果后，决定把这些名词梳理一遍，并且亲自实践一遍，这样更好的加深印象。"><a href="#每次遇到offsetWidth、offsetHeight、offsetTop、offsetLeft等等就一阵头疼，倒不是因为复杂的原因，只是这几个名词实在是太难分辨了。今天碰到一种依赖“scrollTop”的动画效果后，决定把这些名词梳理一遍，并且亲自实践一遍，这样更好的加深印象。" class="headerlink" title="每次遇到offsetWidth、offsetHeight、offsetTop、offsetLeft等等就一阵头疼，倒不是因为复杂的原因，只是这几个名词实在是太难分辨了。今天碰到一种依赖“scrollTop”的动画效果后，决定把这些名词梳理一遍，并且亲自实践一遍，这样更好的加深印象。"></a>每次遇到<code>offsetWidth</code>、<code>offsetHeight</code>、<code>offsetTop</code>、<code>offsetLeft</code>等等就一阵头疼，倒不是因为复杂的原因，只是这几个名词实在是太难分辨了。今天碰到一种依赖“scrollTop”的动画效果后，决定把这些名词梳理一遍，并且亲自实践一遍，这样更好的加深印象。</h4><a id="more"></a>
+<h5 id="offsetWidth-amp-offsetHeight"><a href="#offsetWidth-amp-offsetHeight" class="headerlink" title="offsetWidth&amp;offsetHeight"></a><code>offsetWidth</code>&amp;<code>offsetHeight</code></h5><ul>
+<li>这两个属性都是只读属性，并不能进行写操作。它一般指的是元素的宽高+内边距+边框。嗯，它不包含<strong>外边距</strong>。</li>
+</ul>
+<h5 id="offsetTop-amp-offsetLeft-amp-offsetParent"><a href="#offsetTop-amp-offsetLeft-amp-offsetParent" class="headerlink" title="offsetTop&amp;offsetLeft&amp;offsetParent"></a><code>offsetTop</code>&amp;<code>offsetLeft</code>&amp;<code>offsetParent</code></h5><ul>
+<li>已经定位或其他元素（表格单元），这些属性返回的是相对于祖先元素</li>
+<li>一般情况下，是相对于文档，返回的是文档的坐标</li>
+<li><code>offsetParent</code>属性制定这些属性所相对的父元素。如果值为null,那么这些元素都是文档元素</li>
+</ul>
+<p><strong><em>这里有一点值得注意的是：<code>offsetParent</code>返回的是<code>dom</code>文档，而不是具体的宽高。如果元素没有定位，那么它返回的是<code>body</code>只有通过<code>position</code>定位后，返回的才是父元素。我们可以这样得到父元素的宽：<code>child.offsetParent.offsetWidth</code></em></strong></p>
+<h5 id="clientWidth-amp-clientHeight"><a href="#clientWidth-amp-clientHeight" class="headerlink" title="clientWidth&amp;clientHeight"></a><code>clientWidth</code>&amp;<code>clientHeight</code></h5><ul>
+<li>它们返回的值和上面不同的是：它们不包括边框。如果是有滚动条的情况下，它们也不包括滚动条。</li>
+</ul>
+<h5 id="clientTop-amp-clientLeft"><a href="#clientTop-amp-clientLeft" class="headerlink" title="clientTop&amp;clientLeft"></a><code>clientTop</code>&amp;<code>clientLeft</code></h5><ul>
+<li>通常都是边框的宽度。具体说法是：内边距的外沿与边框外沿的距离。</li>
+</ul>
+<h5 id="scrollWidth-amp-scrollHeight"><a href="#scrollWidth-amp-scrollHeight" class="headerlink" title="scrollWidth&amp;scrollHeight"></a><code>scrollWidth</code>&amp;<code>scrollHeight</code></h5><ul>
+<li>它是指内容的宽高+内边距，如果有溢出的内容，加上溢出内容的宽高。要是没有溢出，它们的值与<code>clientWidth</code>&amp;<code>clientHeight</code>相等。它们也包括滚动条！</li>
+</ul>
+<h5 id="scrollTop-amp-scrollLeft"><a href="#scrollTop-amp-scrollLeft" class="headerlink" title="scrollTop&amp;scrollLeft"></a><code>scrollTop</code>&amp;<code>scrollLeft</code></h5><ul>
+<li>这两个返回的值指的是滚动条的位置。可以写入新值来控制滚动条的位置。</li>
+</ul>
+<p>接下来我们看demo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;demo&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        div &#123;</div><div class="line">            position: relative;</div><div class="line">            width: 500px;</div><div class="line">            height: 500px;</div><div class="line">            border: 1px solid #f00;</div><div class="line">            padding: 6px;</div><div class="line">            margin: 10px;</div><div class="line">            overflow: scroll;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        .child &#123;</div><div class="line">            position: absolute;</div><div class="line">            width: 100px;</div><div class="line">            height: 100px;</div><div class="line">            background-color: #FF3737;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;获取某个DOM元素绑定的事件</div><div class="line"></div><div class="line">        在调试的时候，有时需要知道某个元素上面绑定了上面出发事件，chrome可以让你轻松找到它们。</div><div class="line">        getEventListener($(&apos;selector&apos;))方法以数组对象的形式返回某个元素绑定的所有事件。</div><div class="line">        要是你需要选择其中的某个事件，可以通过下面的方法来访问。</div><div class="line">        getEventsListener($(&apos;selector&apos;)).eventName[0].listener或者是getEventsListener($(&apos;#firstName&apos;)).click[0].listener</div><div class="line"></div><div class="line">        ...</div><div class="line"></div><div class="line">        dir($(&apos;selector&apos;))会返回匹配选择器的DOM元素的所有属性。</div><div class="line">        &lt;div class=&quot;child&quot;&gt;i am a child&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var oParent = document.getElementsByTagName(&apos;div&apos;)[0];</div><div class="line">    var oChild = oParent.getElementsByClassName(&apos;child&apos;)[0];</div><div class="line"></div><div class="line">    console.log(oParent.offsetWidth);</div><div class="line">    console.log(oParent.offsetHeight);</div><div class="line">    console.log(oParent.offsetTop);</div><div class="line">    console.log(oParent.offsetLeft);</div><div class="line">    console.log(oChild.offsetParent);</div><div class="line">    console.log(oChild.offsetParent.offsetWidth);</div><div class="line">    console.log(oParent.clientWidth);</div><div class="line">    console.log(oParent.clientHeight);</div><div class="line">    console.log(oParent.offsetLeft);</div><div class="line">    console.log(oParent.offsetTop);</div><div class="line">    console.log(oParent.scrollWidth);</div><div class="line">    console.log(oParent.scrollHeight);</div><div class="line">    console.log(oParent.scrollTop);</div><div class="line">    console.log(oParent.scrollLeft);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170105205135.png" alt="demo"></p>
+<p>over..</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[(网页性能之DocumentFragment)]]></title>
       <url>http://yoursite.com/2017/01/05/%E7%BD%91%E9%A1%B5%E6%80%A7%E8%83%BD%E4%B9%8BDocumentFragment/</url>
       <content type="html"><![CDATA[<h4 id="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment-于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。"><a href="#在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment-于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。" class="headerlink" title="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。"></a>在看阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html?utm_content=buffer726f5&amp;" target="_blank" rel="external">网页性能管理详解</a>时遇到一个陌生的<code>DOM</code>标签：<code>documentFragment</code>,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个<code>DOM</code>对网页性能优化有着莫大的作用。</h4><a id="more"></a>
@@ -683,14 +715,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
