@@ -80,6 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="js," />
 
 
 
@@ -92,15 +93,17 @@
 
 
 
-<meta name="description" content="如无必要，勿增实体">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoYang的博客">
-<meta property="og:url" content="http://yoursite.com/categories/RegExp/index.html">
+
+<meta name="description" content="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(网页性能之DocumentFragment)">
+<meta property="og:url" content="http://yoursite.com/2017/01/05/网页性能之DocumentFragment/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="如无必要，勿增实体">
+<meta property="og:description" content="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。">
+<meta property="og:updated_time" content="2017-01-05T11:40:09.611Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoYang的博客">
-<meta name="twitter:description" content="如无必要，勿增实体">
+<meta name="twitter:title" content="(网页性能之DocumentFragment)">
+<meta name="twitter:description" content="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。">
 
 
 
@@ -121,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/RegExp/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/05/网页性能之DocumentFragment/"/>
 
-  <title> 分类: RegExp | XiaoYang的博客 </title>
+  <title> (网页性能之DocumentFragment) | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,7 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,47 +268,165 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        RegExp
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                (网页性能之DocumentFragment)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-05T19:37:47+08:00" content="2017-01-05">
+              2017-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/05/网页性能之DocumentFragment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/05/网页性能之DocumentFragment/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h4 id="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment-于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。"><a href="#在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment-于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。" class="headerlink" title="在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。"></a>在看阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html?utm_content=buffer726f5&amp;" target="_blank" rel="external">网页性能管理详解</a>时遇到一个陌生的<code>DOM</code>标签：<code>documentFragment</code>,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个<code>DOM</code>对网页性能优化有着莫大的作用。</h4><a id="more"></a>
+<h5 id="DocumentFragment节点具有一下特征："><a href="#DocumentFragment节点具有一下特征：" class="headerlink" title="DocumentFragment节点具有一下特征："></a><code>DocumentFragment</code>节点具有一下特征：</h5><ul>
+<li><code>nodetype</code>为11；</li>
+<li><code>nodeName</code>为“#document-fragment”；</li>
+<li><code>parentNode</code>为null。</li>
+</ul>
+<p>高程里有一句话是这样描述的：<strong><em> 虽然不能把文档片段直接添加到文档中，但可以把它当做一个‘仓库’来使用，即可以在里面保存将来可能会添加到文档中的节点。</em></strong></p>
+<p>如果将文档中的节点添加到文档片段中，就会从文档中移除该节点，也不会从浏览器中在看到该节点。添加到文档片段中的新节点同样也不属于文档树。</p>
+<p>假设我们想为一个<code>&lt;ul id=&quot;myList&quot;&gt;&lt;/ul&gt;</code>添加三个列表项，如果逐个添加列表项，将会导致浏览器反复渲染新信息。我们可以将三个列表项先添加到文档片段中，在添加到真是的<code>DOM tree</code>中。</p>
+<p>使用方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var fragement = document.createDocumentFragment();</div><div class="line">var ul = document.getElementById(&apos;myList&apos;);</div><div class="line">var li = null;</div><div class="line"></div><div class="line">for(var i = 0; i &lt; 3; i++) &#123;</div><div class="line">    li = document.createElement(&apos;li&apos;);</div><div class="line">    li.appendChild(document.createTextNode(&apos;item&apos; + ( i + 1) ));</div><div class="line">    fragment.appendChild(li);</div><div class="line">&#125;</div><div class="line"></div><div class="line">ul.appendChild(fragment);</div></pre></td></tr></table></figure>
+<p>over..</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/20/65条正则表达式/" itemprop="url">
-              
-                <span itemprop="name">65条正则表达式</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-20T13:48:25+08:00"
-              content="2016-10-20" >
-          10-20
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/27/mongodb安装注意事项/" rel="next" title="(mongodb安装注意事项)">
+                <i class="fa fa-chevron-left"></i> (mongodb安装注意事项)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -347,8 +468,17 @@ var duoshuoQuery = {short_name:"tohere"};
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -418,6 +548,17 @@ var duoshuoQuery = {short_name:"tohere"};
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment-于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。"><span class="nav-number">1.</span> <span class="nav-text">在看阮一峰老师的网页性能管理详解时遇到一个陌生的DOM标签：documentFragment,于是查看了一下大字典–高程。顿时豁然开朗。确实，这个DOM对网页性能优化有着莫大的作用。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DocumentFragment节点具有一下特征："><span class="nav-number">1.1.</span> <span class="nav-text">DocumentFragment节点具有一下特征：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -510,6 +651,10 @@ var duoshuoQuery = {short_name:"tohere"};
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -526,9 +671,9 @@ var duoshuoQuery = {short_name:"tohere"};
 
     <script type="text/javascript">
       var disqus_shortname = 'tohere';
-      var disqus_identifier = 'categories/RegExp/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = '2017/01/05/网页性能之DocumentFragment/';
+      var disqus_title = "(网页性能之DocumentFragment)";
+      var disqus_url = 'http://yoursite.com/2017/01/05/网页性能之DocumentFragment/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -539,6 +684,8 @@ var duoshuoQuery = {short_name:"tohere"};
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
