@@ -291,6 +291,125 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/08/关于jquery的两个小插件/" itemprop="url">
+                  关于jquery的两个小插件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-08T14:59:13+08:00" content="2017-02-08">
+              2017-02-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/08/关于jquery的两个小插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/08/关于jquery的两个小插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="最近有点烦躁，感觉忙忙碌碌一年多，学的东西太不扎实了。仔细想了想，大概是工作业务太简单了，什么都用不到。天天静态页面实在是不行，忙东忙西学了点工程构建方面的知识，bootstrap再认识，vue-微信小程序等等，但是学的太浮躁。今天学，明天忘，实在感觉太差劲了。还忍一段时间吧，过了这段时间换份工作，前端终归是属于互联网企业的，真有点受够了这种传统类型的企业。不过，抱怨归抱怨，还是要学东西，由于白天的页面涉及到了表单，我这里整理表单验证的插件一个，和ajax提交表单的插件一个。"><a href="#最近有点烦躁，感觉忙忙碌碌一年多，学的东西太不扎实了。仔细想了想，大概是工作业务太简单了，什么都用不到。天天静态页面实在是不行，忙东忙西学了点工程构建方面的知识，bootstrap再认识，vue-微信小程序等等，但是学的太浮躁。今天学，明天忘，实在感觉太差劲了。还忍一段时间吧，过了这段时间换份工作，前端终归是属于互联网企业的，真有点受够了这种传统类型的企业。不过，抱怨归抱怨，还是要学东西，由于白天的页面涉及到了表单，我这里整理表单验证的插件一个，和ajax提交表单的插件一个。" class="headerlink" title="最近有点烦躁，感觉忙忙碌碌一年多，学的东西太不扎实了。仔细想了想，大概是工作业务太简单了，什么都用不到。天天静态页面实在是不行，忙东忙西学了点工程构建方面的知识，bootstrap再认识，vue,微信小程序等等，但是学的太浮躁。今天学，明天忘，实在感觉太差劲了。还忍一段时间吧，过了这段时间换份工作，前端终归是属于互联网企业的，真有点受够了这种传统类型的企业。不过，抱怨归抱怨，还是要学东西，由于白天的页面涉及到了表单，我这里整理表单验证的插件一个，和ajax提交表单的插件一个。"></a>最近有点烦躁，感觉忙忙碌碌一年多，学的东西太不扎实了。仔细想了想，大概是工作业务太简单了，什么都用不到。天天静态页面实在是不行，忙东忙西学了点工程构建方面的知识，bootstrap再认识，vue,微信小程序等等，但是学的太浮躁。今天学，明天忘，实在感觉太差劲了。还忍一段时间吧，过了这段时间换份工作，前端终归是属于互联网企业的，真有点受够了这种传统类型的企业。不过，抱怨归抱怨，还是要学东西，由于白天的页面涉及到了表单，我这里整理表单验证的插件一个，和ajax提交表单的插件一个。</h5><h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><ol>
+<li>引入<code>jquery</code> <code>jquery.validate.js</code> <code>jquery.metadate.js</code>三个库</li>
+<li>命名<code>name</code>属性</li>
+<li>编写验证规则</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(&apos;form&apos;).validate(&#123;</div><div class="line">    rules: &#123;</div><div class="line">        username: &#123;</div><div class="line">            require: true,</div><div class="line">            minlength:2</div><div class="line">        &#125;,</div><div class="line">        email: &#123;</div><div class="line">            require: true,</div><div class="line">            minlength:2</div><div class="line">        &#125;,</div><div class="line">        address: &#123;</div><div class="line">            require: true,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>此处的提示消息为英文，换成中文只需引入<code>jquery.validate.message_cn.js</code>即可</p>
+<h3 id="自定义验证信息"><a href="#自定义验证信息" class="headerlink" title="自定义验证信息"></a>自定义验证信息</h3><p>在<code>input</code>处添加<code>class</code>，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; class=&quot;&#123;validate:&#123;require:true,minlength:2, message:&#123;require:&apos;请输入姓名&apos;, minlength:&apos;请输入至少两个字符&apos;&#125;&#125;&#125;&quot;&gt;</div><div class="line">&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; class=&quot;&#123;validate:&#123;require:true,email:true, message:&#123;require:&apos;请输入邮箱&apos;,email:&apos;请输入完整的邮箱名&apos;&#125;&#125;&#125;&quot;&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="自定义验证信息并美化"><a href="#自定义验证信息并美化" class="headerlink" title="自定义验证信息并美化"></a>自定义验证信息并美化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//js</div><div class="line">$(&apos;form&apos;).validate(&#123;</div><div class="line">    rules: &#123;</div><div class="line">        username: &#123;</div><div class="line">            require: true,</div><div class="line">            minlength:2</div><div class="line">        &#125;,</div><div class="line">        email: &#123;</div><div class="line">            require: true,</div><div class="line">            minlength:2</div><div class="line">        &#125;,</div><div class="line">        address: &#123;</div><div class="line">            require: true,</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    errorElement: &quot;em&quot;,</div><div class="line">    success: function(label) &#123;</div><div class="line">        label.text(&quot; &quot;)</div><div class="line">            .addClass(&quot;success&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * css</div><div class="line"> *此处可以和bootstrap中的iconFont结合起来</div><div class="line"> */</div><div class="line">em.err &#123;</div><div class="line">    background:url(../img/unchecked.gif) no-repeat 0px 0px;</div><div class="line">    padding-left: 16px;</div><div class="line">&#125;</div><div class="line">em.success &#123;</div><div class="line">    background: url(../img/checked.gif) no-repeat 0px 0px;</div><div class="line">    padding-left: 16px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="使用方式-1"><a href="#使用方式-1" class="headerlink" title="使用方式"></a>使用方式</h5><ol>
+<li>引入<code>jquery</code> <code>jquery.form.js</code></li>
+<li>直接调用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">&lt;form id=&quot;#myForm&quot; action=&quot;demo.php&quot;&gt;</div><div class="line">    &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</div><div class="line">    &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</div><div class="line">    &lt;input type=&quot;url&quot; name=&quot;url&quot;&gt;</div><div class="line">    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;</div><div class="line">    &lt;div id=&quot;output&quot; style=&quot;display:none;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    $(&quot;#myForm&quot;).ajaxFrom(function() &#123;</div><div class="line">        $(&quot;#output&quot;).html(&quot;提交成功,祝你好运！&quot;)</div><div class="line">            .show();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    **OR**</div><div class="line">    $(&quot;input[type=&apos;submit&apos;]&quot;).ajaxSubmit(function() &#123;</div><div class="line">        $(&quot;#output&quot;).html(&quot;提交成功,祝你好运！&quot;)</div><div class="line">            .show();</div><div class="line"></div><div class="line">        return false;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>ajaxFrom</code> <code>ajaxSubmit</code>可以解说0或者1个参数，这个参数可以是回调函数，也可以是一个options对象。例如我们可以这样写options对象：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var options = &#123;</div><div class="line">    target: &quot;#output&quot;, //把服务器返回的数据写入这个id</div><div class="line">    beforeSubmit: showRequest, //提交前的回调函数</div><div class="line">    sucess: showResponse, //提交后的回调函数</div><div class="line">    url: url, //默认是form的action，如果申明，则覆盖</div><div class="line">    type: type, //默认是form的method(&apos;get&apos; or &apos;post&apos;)，如果申明，则覆盖</div><div class="line">    dataType: null, //&apos;xml&apos; &apos;html&apos; &apos;json&apos;</div><div class="line">    clearForm: true, //提交成功后，清除表单所有的值</div><div class="line">    resetForm: true, //成功提交后，重置表单的所有的值</div><div class="line">    timeout: 3000 //限制请求，当请求大于3秒后，跳出请求</div><div class="line">&#125;;</div><div class="line"></div><div class="line">传入</div><div class="line">$(&quot;#myForm&quot;).ajaxForm(options);</div><div class="line">or </div><div class="line">$(&quot;input[type=&apos;submit&apos;]&quot;).submit(function() &#123;</div><div class="line">    $(this).ajaxSubmit(options);</div><div class="line">    return false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/05/还记得offset-client-scroll-吗？/" itemprop="url">
                   (还记得offset-*/client-*/scroll-*吗？)
                 </a>
@@ -1366,128 +1485,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/14/我经常用的ST3插件/" itemprop="url">
-                  我经常用的ST3插件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T15:16:49+08:00" content="2016-11-14">
-              2016-11-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/sublime-text3/" itemprop="url" rel="index">
-                    <span itemprop="name">sublime text3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/14/我经常用的ST3插件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/14/我经常用的ST3插件/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。"><a href="#平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。" class="headerlink" title="平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。"></a>平时用到的一些插件不算多，但数数也有十几个了。不做总结的话，估计换台电脑我又得重新找回来，这里对这些插件做一个总结。一方面清楚自己到底用了哪些插件，一方面也把插件的配置粘过来，总之，方便自己在任何地方、任何电脑上，也能够享受统一的插件服务。</h4>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/14/我经常用的ST3插件/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1548,7 +1545,7 @@ var duoshuoQuery = {short_name:"tohere"};
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
