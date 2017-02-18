@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS3," />
+  <meta name="keywords" content="AJax," />
 
 
 
@@ -94,18 +94,16 @@
 
 
 
-<meta name="description" content="一直以为position就四个值：staic fixed relative absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。">
+<meta name="description" content="今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="position下的sticky">
-<meta property="og:url" content="http://yoursite.com/2017/02/17/position下的sticky/index.html">
+<meta property="og:title" content="Ajax知识点再梳理">
+<meta property="og:url" content="http://yoursite.com/2017/02/18/Ajax知识点再梳理/index.html">
 <meta property="og:site_name" content="XiaoYang的博客">
-<meta property="og:description" content="一直以为position就四个值：staic fixed relative absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。">
-<meta property="og:image" content="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170217211231.png">
-<meta property="og:updated_time" content="2017-02-17T13:25:28.609Z">
+<meta property="og:description" content="今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。">
+<meta property="og:updated_time" content="2017-02-18T07:47:05.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="position下的sticky">
-<meta name="twitter:description" content="一直以为position就四个值：staic fixed relative absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。">
-<meta name="twitter:image" content="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170217211231.png">
+<meta name="twitter:title" content="Ajax知识点再梳理">
+<meta name="twitter:description" content="今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。">
 
 
 
@@ -126,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/17/position下的sticky/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/18/Ajax知识点再梳理/"/>
 
-  <title> position下的sticky | XiaoYang的博客 </title>
+  <title> Ajax知识点再梳理 | XiaoYang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +289,7 @@
             
             
               
-                position下的sticky
+                Ajax知识点再梳理
               
             
           </h1>
@@ -303,8 +301,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-17T20:46:10+08:00" content="2017-02-17">
-              2017-02-17
+            <time itemprop="dateCreated" datetime="2017-02-18T15:45:56+08:00" content="2017-02-18">
+              2017-02-18
             </time>
           </span>
 
@@ -317,8 +315,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS3/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS3</span>
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
                   </a>
                 </span>
 
@@ -333,8 +331,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/17/position下的sticky/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/17/position下的sticky/" itemprop="commentsCount"></span>
+                <a href="/2017/02/18/Ajax知识点再梳理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/18/Ajax知识点再梳理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,13 +355,63 @@
       
 
       
-        <h5 id="一直以为position就四个值：staic-fixed-relative-absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。"><a href="#一直以为position就四个值：staic-fixed-relative-absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。" class="headerlink" title="一直以为position就四个值：staic fixed relative absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。"></a>一直以为<code>position</code>就四个值：<code>staic</code> <code>fixed</code> <code>relative</code> <code>absolute</code>。没想到今天早上看文章发现还有一个值，那就是<code>sticky</code>。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。</h5><a id="more"></a>
-<h5 id="粘性布局"><a href="#粘性布局" class="headerlink" title="粘性布局"></a>粘性布局</h5><blockquote>
-<p>用户总是希望在窗口明显的地方方便找到自己想要的操作项，例如停留在浏览器窗口顶端的菜单栏，筛选栏等。所以我们会把用户最常用到或者我们希望用户注意到的内容一直展现在窗口的可视区域，让用户能够一眼就看到。这当中常需要用到一种页面滚动然后元素固定在窗口的某个位置的布局方式（下面简称粘性布局）。</p>
-</blockquote>
-<p>以上这段话写的清晰透彻，我就给引用过来了。要是没有<code>sticky</code>，我们可能就要用到<code>js</code>代码块了。代码可以这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var nav = document.querySelector(&apos;.nav&apos;);</div><div class="line">var navOffsetY = nav.offsetTop;</div><div class="line">function onScroll(e) &#123;</div><div class="line">    window.scrollY &gt;= navOffsetY ? nav.classList.add(&apos;fixed&apos;) : nav.classList.remove(&apos;fixed&apos;);</div><div class="line">    window.addEventListener(&apos;scroll&apos;, onScroll);</div></pre></td></tr></table></figure></p>
-<p>然后网上发现说在移动端体验并不好，因为会发生闪动。<br>接下来我们应该可以使用<code>sitcky</code>,<code>caniuse.com</code>上的兼容性如下图：<br><img src="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170217211231.png" alt="兼容性">IE11都不兼容，甚至连Android Browser都不支持。那我们为了考虑兼容性可以这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">.sticky &#123;</div><div class="line">    position: -webkit-sticky;</div><div class="line">    position: sticky;</div><div class="line">    top:0;</div><div class="line">&#125;</div><div class="line">.fixed &#123;</div><div class="line">    position: fixed;</div><div class="line">    top: 0;</div><div class="line">&#125;</div><div class="line">//检测IOS版本大于6</div><div class="line">function getIOS6() &#123;</div><div class="line">    var userAgent = window.navigator.userAgent;</div><div class="line">    var ios = userAgent.match(/(iPad|iPhone|iPod)\s(\d_\.)+/);</div><div class="line">    return ios &amp;&amp; ios][2] &amp;&amp; (parsetInt(ios[2].replace(/_/g, &apos;.&apos;), 10) &gt; 6);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var nav = document.querySelector(&apos;.nav&apos;);</div><div class="line">if(getIOS6()) &#123;</div><div class="line">    nav.classList.add(&apos;sticky&apos;;)</div><div class="line">&#125; else &#123;</div><div class="line">    var navOffsetY = nav.offsetTop;</div><div class="line">    function onScroll(e) &#123;</div><div class="line">        window.scrollY &gt;= navOffsetTop ? nav.classList.add(&apos;fixed&apos;) : nav.classList.remove(&apos;fixed&apos;);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    window.addEeventListener(&apos;scroll&apos;, onScroll);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>大部分都是参考大神的，我只是琢磨了一遍。hah</p>
+        <h5 id="今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。"><a href="#今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。" class="headerlink" title="今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。"></a>今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。</h5><a id="more"></a>
+<h3 id="创建XHR对象"><a href="#创建XHR对象" class="headerlink" title="创建XHR对象:"></a>创建XHR对象:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var xhr = createXHR();</div></pre></td></tr></table></figure>
+<h3 id="响应码："><a href="#响应码：" class="headerlink" title="响应码："></a>响应码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = createXHR();</div><div class="line">    xhr.onreadystatechange = function() &#123;</div><div class="line">        if(xhr.readyState == 4) &#123;</div><div class="line">            if(xhr.status &lt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status = 304) &#123;</div><div class="line">                //responseText</div><div class="line">            &#125; eles &#123;</div><div class="line">                //unsuccessfull</div><div class="line">            &#125;;</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    xhr.open(&apos;GET&apos;, url, false);</div><div class="line">    xhr.send(null);</div></pre></td></tr></table></figure>
+<h3 id="HTTP头部信息"><a href="#HTTP头部信息" class="headerlink" title="HTTP头部信息"></a>HTTP头部信息</h3><ol>
+<li>每个http请求和响应都会带有响应的头部信息，默认情况下，在发送XHR请求的同时，还会发送下列头部信息：<ul>
+<li>Accept: 浏览器能够处理的内容类型；</li>
+<li>Accept-Charset: 浏览器能够显示的字符集；</li>
+<li>Accept-Encoding: 浏览器能够处理的压缩编码；</li>
+<li>Accept-Language: 浏览器当前设置的语言；</li>
+<li>Connection: 浏览器与服务器之间的连接类型；</li>
+<li>Cookie: 当前页面设置的任何Cookie;</li>
+<li>Host: 发出请求页面所在的域；</li>
+<li>Referer: 发出请求页面的URL；</li>
+<li>User-Agent: 浏览器的用户代理字符串</li>
+</ul>
+</li>
+<li>使用<code>setRequestHeader()</code>方法可以设置自定义的请求头部信息。这个方法接受两个参数：头部字段的名称和头部字段的值。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var xhr = createXHR();</div><div class="line">xhr.onreadystatechange = function() &#123;</div><div class="line">    if(xhr.readyState == 4) &#123;</div><div class="line">        if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status = 304) &#123;</div><div class="line">            //todo</div><div class="line">        &#125; else &#123;</div><div class="line">            //successfull</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">xhr.open(&apos;GET&apos;, url, false);</div><div class="line">xhr.setRequestHeader(&apos;MyHeader&apos;, &apos;MyHeader&apos;);</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h5><p>GET是最常见的请求，最常用于向服务器查询某些信息。必要时，可以将查询字符串追加到URL的末尾，以便将信息发送到服务器。对XHR而言，位于传入open()方法的URL末尾的查询字符串必须经过正确的编码才行。查询字符串中每个参数的名称和值都必须经过<code>encodeURIComponent()</code>进行编码，然后才能放到URL末尾；而且所有的键值对都必须由<code>&amp;</code>分隔：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(&apos;GET&apos;, example.php?name1=value1&amp;name2=value2, true)</div></pre></td></tr></table></figure></p>
+<p>我们可以用下面这个函数进行转化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function addURIComponent(url, name, value) &#123;</div><div class="line">    url += (url.indexOf(&apos;?&apos;) == -1 ? &apos;?&apos; : &apos;&amp;&apos;);</div><div class="line">    url += encodeURIComponent(name) + &apos;=&apos; + encodeURIComponent(value);</div><div class="line">    </div><div class="line">    return url;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来我们可以这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">addURIComponent(url, &apos;name&apos;, value);</div><div class="line">xhr.open(&apos;GET&apos;, url, false);</div></pre></td></tr></table></figure></p>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><p>它通常用于向服务器发送数据。默认情况下，服务器对POST请求和提交WEB表单的请求不会一视同仁。不过，我们可以使用XHR来模仿表单提交；首先将<code>Content-Type</code>头部信息设置为<code>application/x-www-form-urlencoded</code>,也就是表单提交时的头信息，其次以适当的格式创建一个字符串(POST数据的格式与查询字符串的格式相同)。我们将表单的数据序列化，然后再通过XHR发送到服务器。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var xhr = createXHR();</div><div class="line">xhr.onreadystatechane = function() &#123;</div><div class="line">    if(xhr.readyState == 4) &#123;</div><div class="line">        if(xhr.status &lt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status == 304) &#123;</div><div class="line">            //responseText</div><div class="line">        &#125; else &#123;</div><div class="line">            //unsuccessfull</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xhr.open(&apos;POST&apos;, url, false);</div><div class="line">xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);</div><div class="line">var form = document.getElementById(&apos;formId&apos;);</div><div class="line">xhr.send(serialize(form));</div></pre></td></tr></table></figure></p>
+<p>以上是XMLHttpRequest1级的内容，接下来我们描述XMLHttpRequest2级的内容。</p>
+<hr>
+<h4 id="FormData"><a href="#FormData" class="headerlink" title="FormData"></a>FormData</h4><p>现代WEB应用中频繁使用的一项功能是表单数据的序列化，XMLHttpRequest2级专门定义了FormData类型。FormData为序列化表单以及创建于表单格式相同的数据提供了便利。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//创建FormData对象，并添加数据</div><div class="line"></div><div class="line">var data = new Formdata();</div><div class="line">data.append(&apos;name&apos;,&apos;xiaoyang&apos;);</div><div class="line"></div><div class="line">//y也可以用表单数据预先向其中传入键值对</div><div class="line"></div><div class="line">var data = new FormData(document.forms[0]);</div><div class="line"></div><div class="line">var xhr = createXHR();</div><div class="line">xhr.onreadystatechange = function() &#123;</div><div class="line">    if(xhr.readystate == 4) &#123;</div><div class="line">        if(xhr.status &gt;=200 &amp;&amp; xhr.status &lt; 300 || xhr.status == 304 ) &#123;</div><div class="line">            //responseText;</div><div class="line">        &#125; else &#123;</div><div class="line">            //unsucessfull</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xhr.open(&apos;POST&apos;, url, false);</div><div class="line">var form = document.form[0];</div><div class="line">xhr.send(form);</div></pre></td></tr></table></figure></p>
+<h4 id="CORS-跨源资源共享"><a href="#CORS-跨源资源共享" class="headerlink" title="CORS(跨源资源共享)"></a>CORS(跨源资源共享)</h4><ol>
+<li>IE下的对CORS实现 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var xdr = new XDomainRequest();</div><div class="line">xdr.onload = function() &#123;</div><div class="line">    //xdr.responseText</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xdr.onerror = function() &#123;</div><div class="line">    alert(&apos;An Error occured&apos;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xdr.open(&apos;GET, url, false);</div><div class="line">xdr.send(null);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>其他浏览器对CORS实现<ul>
+<li>无需额外的设置，只需要将URL设置为绝对地址即可。但是也有所限制：<ol>
+<li>不能使用setRequestHeader;</li>
+<li>不能发送和接受cookie;</li>
+<li>调用getAllReponseHeaders()方法总会返回空字符串;</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="其他跨域技术："><a href="#其他跨域技术：" class="headerlink" title="其他跨域技术："></a>其他跨域技术：</h4><ol>
+<li>图像Ping</li>
+<li><p>JSONP</p>
+<ul>
+<li>JSONP 是JSON with padding(填充式JSON或参数式JSON)的简写，是应用JSON的一种新方法。</li>
+<li>它由两个部分组成：<ul>
+<li>callback，当响应到来时，应该在页面中调用的函数</li>
+<li>数据 传入回调函数中的数据<br>下面是一个典型的JSONP请求：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var url = https://js.huatu.com/json/?call=handleResponse</div><div class="line"></div><div class="line"></div><div class="line">//回调函数的处理方式</div><div class="line">function handleResponse(response) &#123;</div><div class="line">    alert(response.ip + response.city);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var script = document.createElement(&apos;script&apos;);</div><div class="line">script.src= url;</div><div class="line">document.body.insertBefore(scirpt, document.body.firstChild);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Comet</p>
+</li>
+</ol>
 <p>over…</p>
 
       
@@ -387,7 +435,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS3/" rel="tag">#CSS3</a>
+            <a href="/tags/AJax/" rel="tag">#AJax</a>
           
         </div>
       
@@ -396,17 +444,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/08/关于jquery的两个小插件/" rel="next" title="关于jquery的两个小插件">
-                <i class="fa fa-chevron-left"></i> 关于jquery的两个小插件
+              <a href="/2017/02/17/position下的sticky/" rel="next" title="position下的sticky">
+                <i class="fa fa-chevron-left"></i> position下的sticky
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/18/Ajax知识点再梳理/" rel="prev" title="Ajax知识点再梳理">
-                Ajax知识点再梳理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +601,7 @@ var duoshuoQuery = {short_name:"tohere"};
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一直以为position就四个值：staic-fixed-relative-absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。"><span class="nav-number">1.</span> <span class="nav-text">一直以为position就四个值：staic fixed relative absolute。没想到今天早上看文章发现还有一个值，那就是sticky。于是google了一下，发现这个值还是挺有用处的，特别是在移动端。恰好我这段时间要马不停蹄的学习移动端，这不，写个小总结吧。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#粘性布局"><span class="nav-number">2.</span> <span class="nav-text">粘性布局</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。"><span class="nav-number">1.</span> <span class="nav-text">今天又把《高程》拿出来仔细阅读了Ajax部分，感觉又有新的收获。于是我整理一份文档，把Ajax的知识点全部梳理一遍。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建XHR对象"><span class="nav-number"></span> <span class="nav-text">创建XHR对象:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应码："><span class="nav-number"></span> <span class="nav-text">响应码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP头部信息"><span class="nav-number"></span> <span class="nav-text">HTTP头部信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST请求"><span class="nav-number"></span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FormData"><span class="nav-number"></span> <span class="nav-text">FormData</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS-跨源资源共享"><span class="nav-number"></span> <span class="nav-text">CORS(跨源资源共享)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他跨域技术："><span class="nav-number"></span> <span class="nav-text">其他跨域技术：</span></a></div>
             
           </div>
         </section>
@@ -673,9 +717,9 @@ var duoshuoQuery = {short_name:"tohere"};
 
     <script type="text/javascript">
       var disqus_shortname = 'tohere';
-      var disqus_identifier = '2017/02/17/position下的sticky/';
-      var disqus_title = "position下的sticky";
-      var disqus_url = 'http://yoursite.com/2017/02/17/position下的sticky/';
+      var disqus_identifier = '2017/02/18/Ajax知识点再梳理/';
+      var disqus_title = "Ajax知识点再梳理";
+      var disqus_url = 'http://yoursite.com/2017/02/18/Ajax知识点再梳理/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
