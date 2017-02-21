@@ -7,7 +7,7 @@
       <title><![CDATA[关于移动端的一些知识点]]></title>
       <url>http://yoursite.com/2017/02/21/%E5%85%B3%E4%BA%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       <content type="html"><![CDATA[<h4 id="想找工作了，翻开各岗位的招聘要求一看，很大部分要求掌握移动端。我之前多少有一点基础，但还不够，最近打算系统的学习一边。遂将好的、看过的文章整理在此。"><a href="#想找工作了，翻开各岗位的招聘要求一看，很大部分要求掌握移动端。我之前多少有一点基础，但还不够，最近打算系统的学习一边。遂将好的、看过的文章整理在此。" class="headerlink" title="想找工作了，翻开各岗位的招聘要求一看，很大部分要求掌握移动端。我之前多少有一点基础，但还不够，最近打算系统的学习一边。遂将好的、看过的文章整理在此。"></a>想找工作了，翻开各岗位的招聘要求一看，很大部分要求掌握移动端。我之前多少有一点基础，但还不够，最近打算系统的学习一边。遂将好的、看过的文章整理在此。</h4><a id="more"></a>
-<h5 id="文章系列"><a href="#文章系列" class="headerlink" title="文章系列"></a>文章系列</h5><ol>
+<h4 id="文章系列"><a href="#文章系列" class="headerlink" title="文章系列"></a>文章系列</h4><ol>
 <li><a href="http://www.w3cplus.com/css/viewports.html" target="_blank" rel="external">viewports剖析</a></li>
 </ol>
 ]]></content>
@@ -866,14 +866,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
