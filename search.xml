@@ -181,8 +181,7 @@
 </ul>
 <p>接下来我们看demo:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;demo&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        div &#123;</div><div class="line">            position: relative;</div><div class="line">            width: 500px;</div><div class="line">            height: 500px;</div><div class="line">            border: 1px solid #f00;</div><div class="line">            padding: 6px;</div><div class="line">            margin: 10px;</div><div class="line">            overflow: scroll;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        .child &#123;</div><div class="line">            position: absolute;</div><div class="line">            width: 100px;</div><div class="line">            height: 100px;</div><div class="line">            background-color: #FF3737;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;获取某个DOM元素绑定的事件</div><div class="line"></div><div class="line">        在调试的时候，有时需要知道某个元素上面绑定了上面出发事件，chrome可以让你轻松找到它们。</div><div class="line">        getEventListener($(&apos;selector&apos;))方法以数组对象的形式返回某个元素绑定的所有事件。</div><div class="line">        要是你需要选择其中的某个事件，可以通过下面的方法来访问。</div><div class="line">        getEventsListener($(&apos;selector&apos;)).eventName[0].listener或者是getEventsListener($(&apos;#firstName&apos;)).click[0].listener</div><div class="line"></div><div class="line">        ...</div><div class="line"></div><div class="line">        dir($(&apos;selector&apos;))会返回匹配选择器的DOM元素的所有属性。</div><div class="line">        &lt;div class=&quot;child&quot;&gt;i am a child&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var oParent = document.getElementsByTagName(&apos;div&apos;)[0];</div><div class="line">    var oChild = oParent.getElementsByClassName(&apos;child&apos;)[0];</div><div class="line"></div><div class="line">    console.log(oParent.offsetWidth);</div><div class="line">    console.log(oParent.offsetHeight);</div><div class="line">    console.log(oParent.offsetTop);</div><div class="line">    console.log(oParent.offsetLeft);</div><div class="line">    console.log(oChild.offsetParent);</div><div class="line">    console.log(oChild.offsetParent.offsetWidth);</div><div class="line">    console.log(oParent.clientWidth);</div><div class="line">    console.log(oParent.clientHeight);</div><div class="line">    console.log(oParent.offsetLeft);</div><div class="line">    console.log(oParent.offsetTop);</div><div class="line">    console.log(oParent.scrollWidth);</div><div class="line">    console.log(oParent.scrollHeight);</div><div class="line">    console.log(oParent.scrollTop);</div><div class="line">    console.log(oParent.scrollLeft);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170105205135.png" alt="demo"></p>
-<p>over..</p>
+<p><img src="http://of6mwl32w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170105205135.png" alt="demo"><br>这里有篇文章可以看看:<a href="https://segmentfault.com/a/1190000002545307J" target="_blank" rel="external">avaScript中的各种宽高以及位置总结</a><br>over..</p>
 ]]></content>
     </entry>
     
@@ -860,6 +859,12 @@
     </entry>
     
     <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[about]]></title>
       <url>http://yoursite.com/about/index.html</url>
       <content type="html"><![CDATA[<h1 id="写些什么好呢？-2016-10-17"><a href="#写些什么好呢？-2016-10-17" class="headerlink" title="写些什么好呢？(2016-10-17)"></a>写些什么好呢？(2016-10-17)</h1><h1 id="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15"><a href="#本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…-2016-11-15" class="headerlink" title="本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)"></a>本来这里应该是一篇自我介绍，但是自从毕业以来，就感觉完全否决了自己。看不起自己的现在状态，看不清楚未来，把握不住当下。一干二净、一贫如洗，虽然每天忙忙碌碌，奋力向上，但是所取得回报并没有让我感到一丝安慰。唉，这日子过的好艰难，有点心理憔悴…..(2016-11-15)</h1>]]></content>
@@ -868,12 +873,6 @@
     <entry>
       <title><![CDATA[categories]]></title>
       <url>http://yoursite.com/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
