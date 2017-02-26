@@ -1,0 +1,881 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="51f8c31a238c01b8" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mobile," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于移动开发的一些注意事项">
+<meta property="og:url" content="http://yoursite.com/2017/02/26/关于移动开发的一些注意事项/index.html">
+<meta property="og:site_name" content="XiaoYang的博客">
+<meta property="og:description" content="嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。">
+<meta property="og:updated_time" content="2017-02-26T11:38:38.870Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于移动开发的一些注意事项">
+<meta name="twitter:description" content="嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/26/关于移动开发的一些注意事项/"/>
+
+  <title> 关于移动开发的一些注意事项 | XiaoYang的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">XiaoYang的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">在这里沉淀思维</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于移动开发的一些注意事项
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-26T17:50:21+08:00" content="2017-02-26">
+              2017-02-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/mobile/" itemprop="url" rel="index">
+                    <span itemprop="name">mobile</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/26/关于移动开发的一些注意事项/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/26/关于移动开发的一些注意事项/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。"><a href="#嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。" class="headerlink" title="嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。"></a>嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。</h5><a id="more"></a>
+<h5 id="移动端开发视窗口的添加"><a href="#移动端开发视窗口的添加" class="headerlink" title="移动端开发视窗口的添加"></a>移动端开发视窗口的添加</h5><p><strong><em> <code>head</code>必须添加如下一句话  </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>当然里面还可以添加一下配置：</p>
+<ul>
+<li>maximum-scale</li>
+<li>minimun-scale</li>
+</ul>
+<h5 id="rem布局"><a href="#rem布局" class="headerlink" title="rem布局"></a>rem布局</h5><p>rem是根据根元素<code>html</code>中的<code>font-size</code>计算出来的。这样我们可以统一整个网站的单位。在移动端中，我们通过媒体 查询，适时修改不同屏幕下的根元素字体，就可以调整整个网站的盒子大小，因而采用这种方式有利于做出响应式的方案。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">html &#123;</div><div class="line">    font-size: 62.5%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//iPhone6 plus</div><div class="line">@media(max-width:414px) &#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 80.85%;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//iPhnoe6</div><div class="line">@media(max-width:375px) &#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 73.24%;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里有两个缺点是：</p>
+<ol>
+<li>chrome下不好调试。chrome会强制将字体设置为12px以上，因而当<code>font-size:62.5%</code>时，1rem为12px;</li>
+<li>对安卓来说，适配的屏幕不是连续的。</li>
+</ol>
+<p>我们可以采用手淘提供的库<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external">‘lib-flexible’</a>。这样的话：我们的<code>head</code>中可以写入这样的模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</div><div class="line">    &lt;meta name=&quot;apple-touch-fullscreen&quot; content=&quot;yes&quot;&gt;</div><div class="line">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;</div><div class="line">    &lt;meta name=&quot;format-detection&quot; content=&quot;yes&quot;&gt;</div><div class="line">    &lt;script src=&quot;http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+<p>上面的第二条表示：<em>删除默认的苹果工具栏和菜单栏</em><br>第三条表示： <em>可以全屏显示</em><br>第四条表示： <em>设置safari顶端的状态条的样式</em><br>第五条表示：<em>忽略设备中的数字为电话号码</em></p>
+<h5 id="a标签内容语义化"><a href="#a标签内容语义化" class="headerlink" title="a标签内容语义化"></a><code>a</code>标签内容语义化</h5><p>这条不是经验，是看到别人的问题。<br>因为<code>a</code>标签是行内元素，不能再在里面设置其他块状元素，如这样：<code>&lt;a&gt;&lt;div&gt;&lt;/div&gt;&lt;/a&gt;</code>。那我们可以这样给<code>a</code>标签一条<code>css</code>:<code>a {display:block;...}</code></p>
+<h5 id="为自己的页面设置最大宽度和最小宽度"><a href="#为自己的页面设置最大宽度和最小宽度" class="headerlink" title="为自己的页面设置最大宽度和最小宽度"></a>为自己的页面设置最大宽度和最小宽度</h5><p>前面我们用的是rem，再使用js动态计算<code>font-size</code>的值。但是当用户的屏幕超过一定的尺寸以后还继续显示h5页面的话对用户会很不友好。因此我们需要定义页面的最大和最小宽度。这样在屏幕超过一定的尺寸后可以更友好的显示。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    max-width: 640px;</div><div class="line">    min-width: 320px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="去掉a-input在移动端浏览器中的默认样式"><a href="#去掉a-input在移动端浏览器中的默认样式" class="headerlink" title="去掉a input在移动端浏览器中的默认样式"></a>去掉<code>a</code> <code>input</code>在移动端浏览器中的默认样式</h5><ol>
+<li>禁止<code>a</code>标签背景<br>在移动端使用<code>a</code>标签做按钮的时候，点按会出现一个“暗色”的背景，去掉该背景的方法如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a, button, input, optgroup, select, textarea &#123;</div><div class="line">    -webkit-tap-highlight-color: rgba(0,0,0,0)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em> 这样可以去掉<code>a</code> <code>input</code> <code>button</code>点击时的蓝色外边框和灰色半透明背景 </em></strong></p>
+<ol>
+<li>禁止长按<code>a</code> <code>img</code>标签长按出现菜单栏<br>使用<code>a</code>标签的时候，移动端长按会出现一个菜单栏，这个时候禁止呼出菜单栏的方法如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a, img &#123;</div><div class="line">    -webkit-touch-callout: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3.流畅滚动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    -webkit-overflow-scrolling: touch;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="截断字符串"><a href="#截断字符串" class="headerlink" title="截断字符串"></a>截断字符串</h5><p>单行截断字符串，必须制定字符串的宽度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    width: 300px;</div><div class="line">    overflow: hidden;</div><div class="line">    text-overflow: ellipsis;</div><div class="line">    white-space: nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="calc-使用"><a href="#calc-使用" class="headerlink" title="calc()使用"></a>calc()使用</h5><h5 id="box-sizing的使用"><a href="#box-sizing的使用" class="headerlink" title="box-sizing的使用"></a><code>box-sizing</code>的使用</h5><h5 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h5><p>利用相对定位和绝对定位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">    positive: relative;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">.child &#123;</div><div class="line">    positive: absolute;</div><div class="line">    top: 0;</div><div class="line">    left: 0;</div><div class="line">    right: 0;</div><div class="line">    bottom: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="line-height不能撑满容器的问题"><a href="#line-height不能撑满容器的问题" class="headerlink" title="line-height不能撑满容器的问题"></a><code>line-height</code>不能撑满容器的问题</h5><p>使用<code>line-height:100%</code>即可</p>
+<h5 id="使用vertical-align调整图标垂直居中"><a href="#使用vertical-align调整图标垂直居中" class="headerlink" title="使用vertical-align调整图标垂直居中"></a>使用<code>vertical-align</code>调整图标垂直居中</h5><p>‘vertical-align’可以指定行内元素和表格单元格(table-cell)元素的垂直对齐方式</p>
+<blockquote>
+<ul>
+<li>baseline：将支持valign特性的对象的内容与父级元素基线对齐</li>
+<li>sub：元素基线与父元素的下标基线对齐。</li>
+<li>super：元素基线与父元素的上标基线对齐。</li>
+<li>top： 元素及其后代的顶端与整行的顶端对齐。</li>
+<li>text-top：元素顶端与父元素字体的顶端对齐。</li>
+<li>middle：元素中线与父元素的基线对齐。</li>
+<li>bottom：元素及其后代的底端与整行的底端对齐。</li>
+<li>text-bottom：元素底端与父元素字体的底端对齐。</li>
+<li>percentage：用百分比指定由基线算起的偏移量。可以为负值。基线对于百分数来说就是0%。</li>
+<li>length：用长度值指定由基线算起的偏移量。可以为负值。基线对于数值来说为0</li>
+</ul>
+</blockquote>
+<p><strong> 一般我们可以设置<code>vertival-align</code>和它的<code>length</code>值达到我们的目标 </strong></p>
+<h5 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a><code>flex</code>布局</h5><p>由于兼容性问题，我们一般只使用在移动端上。这样我们需要考虑到前缀的问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    display: -webkit-box;</div><div class="line">    display: -ms-flexbox;</div><div class="line">    display: flex;</div><div class="line">    display: -webkit-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="使用CSS3动画"><a href="#使用CSS3动画" class="headerlink" title="使用CSS3动画"></a>使用CSS3动画</h5><p>这主要考虑到的是用<code>cpu</code>，还是<code>gpu</code>渲染的问题。<code>transform</code> <code>transition</code> <code>animation</code>使用的是<code>gpu</code>渲染。</p>
+<h5 id="去除Android平台中对邮箱地址的识别"><a href="#去除Android平台中对邮箱地址的识别" class="headerlink" title="去除Android平台中对邮箱地址的识别"></a>去除Android平台中对邮箱地址的识别</h5><p>如果不想Andorid自动识别页面中的邮件地址，可以在<code>head</code>中加上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot;&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="去除IOS和Android中的输入URL的控件条"><a href="#去除IOS和Android中的输入URL的控件条" class="headerlink" title="去除IOS和Android中的输入URL的控件条"></a>去除IOS和Android中的输入URL的控件条</h5><p><strong><em> 必须在你的文档的内容高度 高于窗口的高度时  </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload = function() &#123;</div><div class="line">    setTimeout(scrollTo, 0, 0, 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="在IOS中禁止用户选中文字"><a href="#在IOS中禁止用户选中文字" class="headerlink" title="在IOS中禁止用户选中文字"></a>在IOS中禁止用户选中文字</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    -webkit-user-select: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="获取滚动条的位置"><a href="#获取滚动条的位置" class="headerlink" title="获取滚动条的位置"></a>获取滚动条的位置</h5><p>在Android中可以通过<code>document.scrollTop</code> <code>document.scrollLeft</code>获取；<br>在IOS中可以通过<code>window.scrollY</code> <code>window.scrollX</code>获取</p>
+<h5 id="解决盒子边框溢出的问题"><a href="#解决盒子边框溢出的问题" class="headerlink" title="解决盒子边框溢出的问题"></a>解决盒子边框溢出的问题</h5><blockquote>
+<p>当你指定了一个块级元素时，并且为其定义了边框，设置了其宽度为100％。在移动设备开发过程中我们通常会对文本框定义为宽度100％，将其定义为块级元素以实现全屏自适应的样式，但此时你会发现，该元素的边框(左右)各1个像素会溢了文档，导致出现横向滚动条，为解决这一问题，我们可以为其添加一个特殊的样式-webkit-box-sizing:border-box;用来指定该盒子的大小包括边框的宽度。 </p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mobile/" rel="tag">#mobile</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/关于移动端的一些知识点/" rel="next" title="关于移动端的一些知识点">
+                <i class="fa fa-chevron-left"></i> 关于移动端的一些知识点
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          <!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>
+<!-- 多说评论框 end -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"tohere"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="XiaoYang" />
+          <p class="site-author-name" itemprop="name">XiaoYang</p>
+          <p class="site-description motion-element" itemprop="description">如无必要，勿增实体</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shouhutianshi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3016448681/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。"><span class="nav-number">1.</span> <span class="nav-text">嗯，反正现在在不听的学习移动端的相关事项，多看看、多写写总归是好的了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#移动端开发视窗口的添加"><span class="nav-number">2.</span> <span class="nav-text">移动端开发视窗口的添加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rem布局"><span class="nav-number">3.</span> <span class="nav-text">rem布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a标签内容语义化"><span class="nav-number">4.</span> <span class="nav-text">a标签内容语义化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为自己的页面设置最大宽度和最小宽度"><span class="nav-number">5.</span> <span class="nav-text">为自己的页面设置最大宽度和最小宽度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#去掉a-input在移动端浏览器中的默认样式"><span class="nav-number">6.</span> <span class="nav-text">去掉a input在移动端浏览器中的默认样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#截断字符串"><span class="nav-number">7.</span> <span class="nav-text">截断字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#calc-使用"><span class="nav-number">8.</span> <span class="nav-text">calc()使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#box-sizing的使用"><span class="nav-number">9.</span> <span class="nav-text">box-sizing的使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#水平垂直居中"><span class="nav-number">10.</span> <span class="nav-text">水平垂直居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#line-height不能撑满容器的问题"><span class="nav-number">11.</span> <span class="nav-text">line-height不能撑满容器的问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用vertical-align调整图标垂直居中"><span class="nav-number">12.</span> <span class="nav-text">使用vertical-align调整图标垂直居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#flex布局"><span class="nav-number">13.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用CSS3动画"><span class="nav-number">14.</span> <span class="nav-text">使用CSS3动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#去除Android平台中对邮箱地址的识别"><span class="nav-number">15.</span> <span class="nav-text">去除Android平台中对邮箱地址的识别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#去除IOS和Android中的输入URL的控件条"><span class="nav-number">16.</span> <span class="nav-text">去除IOS和Android中的输入URL的控件条</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在IOS中禁止用户选中文字"><span class="nav-number">17.</span> <span class="nav-text">在IOS中禁止用户选中文字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取滚动条的位置"><span class="nav-number">18.</span> <span class="nav-text">获取滚动条的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决盒子边框溢出的问题"><span class="nav-number">19.</span> <span class="nav-text">解决盒子边框溢出的问题</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoYang</span>
+</div>
+ <span id="busuanzi_container_page_pv">
+    欢迎光临本站，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+&nbsp;&nbsp;
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260642686'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260642686' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'tohere';
+      var disqus_identifier = '2017/02/26/关于移动开发的一些注意事项/';
+      var disqus_title = "关于移动开发的一些注意事项";
+      var disqus_url = 'http://yoursite.com/2017/02/26/关于移动开发的一些注意事项/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
