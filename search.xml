@@ -154,7 +154,8 @@
 </li>
 </ul>
 </li>
-<li>跨浏览器的CORS <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function createCORSRequest(method, url) &#123;</div><div class="line">    var xhr = new XHLHttpRequest();</div><div class="line">    //兼容IE10以上，以其他现代浏览器</div><div class="line">    if(&apos;withCredentials&apos; in xhr) &#123;</div><div class="line">        xhr.open(method, url, true);</div><div class="line">    &#125; else if(typeof XDomainRequest != &apos;undefined&apos;) &#123;</div><div class="line">        xhr.open(method, url);</div><div class="line">    &#125; else &#123;</div><div class="line">        xhr = null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return xhr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//例子</div><div class="line">var request = createCORSRequest(&apos;GET&apos;, &apos;http://js.huatu.com&apos;);</div><div class="line">if(request) &#123;</div><div class="line">    request.onload = function &#123;</div><div class="line">        //对request.responseText进行处理</div><div class="line">    &#125;；</div><div class="line"></div><div class="line">    request.send(null);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>跨浏览器的CORS</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">function createCORSRequest(method, url) &#123;</div><div class="line">    var xhr = new XHLHttpRequest();</div><div class="line">    //兼容IE10以上，以其他现代浏览器</div><div class="line">    if(&apos;withCredentials&apos; in xhr) &#123;</div><div class="line">        xhr.open(method, url, true);</div><div class="line">    &#125; else if(typeof XDomainRequest != &apos;undefined&apos;) &#123;</div><div class="line">        xhr.open(method, url);</div><div class="line">    &#125; else &#123;</div><div class="line">        xhr = null;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    return xhr;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//例子</div><div class="line">var request = createCORSRequest(&apos;GET&apos;, &apos;http://js.huatu.com&apos;);</div><div class="line">if(request) &#123;</div><div class="line">    request.onload = function &#123;</div><div class="line">        //对request.responseText进行处理</div><div class="line">    &#125;；</div><div class="line"></div><div class="line">    request.send(null);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="其他跨域技术："><a href="#其他跨域技术：" class="headerlink" title="其他跨域技术："></a>其他跨域技术：</h4><ol>
@@ -928,14 +929,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
