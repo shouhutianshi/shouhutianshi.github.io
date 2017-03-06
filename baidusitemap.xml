@@ -3,6 +3,46 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/03/06/lazyLoad%E5%8E%9F%E7%94%9F%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2017-03-06T11:38:56.863Z</lastmod>
+    <data>
+        <display>
+        <title>lazyLoad原生三种方式</title>
+        <pubTime>2017-03-06T11:37:22.000Z</pubTime>
+        
+        <tag>js </tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://yoursite.com/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/06/%E5%85%B3%E4%BA%8EsetTimeout%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-03-06T11:32:22.573Z</lastmod>
+    <data>
+        <display>
+        <title>关于setTimeout的一些问题</title>
+        <pubTime>2017-03-06T11:30:17.000Z</pubTime>
+        
+        <tag>js </tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://yoursite.com/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/02/18/Ajax%E7%9F%A5%E8%AF%86%E7%82%B9%E5%86%8D%E6%A2%B3%E7%90%86/</loc>
     <lastmod>2017-03-01T12:00:59.432Z</lastmod>
     <data>
