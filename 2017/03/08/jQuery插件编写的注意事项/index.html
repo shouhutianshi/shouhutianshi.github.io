@@ -1,0 +1,864 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="51f8c31a238c01b8" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jquery," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……言归正题，今天就说说jQuery插件编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery插件编写的注意事项">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/jQuery插件编写的注意事项/index.html">
+<meta property="og:site_name" content="XiaoYang的博客">
+<meta property="og:description" content="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……言归正题，今天就说说jQuery插件编">
+<meta property="og:image" content="http://of6mwl32w.bkt.clouddn.com/$.extend.png">
+<meta property="og:image" content="http://of6mwl32w.bkt.clouddn.com/$.extend01.png">
+<meta property="og:updated_time" content="2017-03-08T12:15:05.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery插件编写的注意事项">
+<meta name="twitter:description" content="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……言归正题，今天就说说jQuery插件编">
+<meta name="twitter:image" content="http://of6mwl32w.bkt.clouddn.com/$.extend.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/08/jQuery插件编写的注意事项/"/>
+
+  <title> jQuery插件编写的注意事项 | XiaoYang的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">XiaoYang的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">在这里沉淀思维</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery插件编写的注意事项
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-08T20:13:57+08:00" content="2017-03-08">
+              2017-03-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/08/jQuery插件编写的注意事项/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/08/jQuery插件编写的注意事项/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue-angular-react，说到了的都是MV-，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……"><a href="#时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue-angular-react，说到了的都是MV-，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……" class="headerlink" title="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……"></a>时至今日再来谈<code>jQuery</code>总觉得有点怪怪的。为什么呢？现在都是铺天盖地的<code>vue</code> <code>angular</code> <code>react</code>，说到了的都是MV*，哪里还关乎这个呢？确实，<code>jQuery</code>这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到<code>ES6</code>，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要<code>jQuery</code>的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……</h4><h4 id="言归正题，今天就说说jQuery插件编写中需要注意的事项。"><a href="#言归正题，今天就说说jQuery插件编写中需要注意的事项。" class="headerlink" title="言归正题，今天就说说jQuery插件编写中需要注意的事项。"></a>言归正题，今天就说说<code>jQuery</code>插件编写中需要注意的事项。</h4><a id="more"></a>
+<h4 id="jQuery-fn"><a href="#jQuery-fn" class="headerlink" title="jQuery.fn"></a><code>jQuery.fn</code></h4><p>要编写一个插件，需要给<code>jQuery.fn</code>对象添加一个新的函数属性，插件的名称就是属性名。例如：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery.fn.myPlugin = function() &#123;</div><div class="line">    //todo</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>接下来，我们用一个IIFE改一下：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    $.fn.myPlugin = function() &#123;</div><div class="line">        //todo</div><div class="line">    &#125;</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure>
+</code></pre><p>这样看起来就熟悉了吧。</p>
+<h4 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h4><p>现在我们就可以开始真正的编写插件了。但是有一点需要注意的是：在插件中，关键字<code>this</code>指向调用插件的<code>jQuery</code>对象。有时候，容易造成开发者在<code>jQuery</code>函数中对<code>this</code>·关键字多做一次无意义的包装。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    $.fn.myPlugin = function() &#123;</div><div class="line">        //$(this)与$(&apos;#element&apos;)相同，所以没有必要在做$(this)</div><div class="line">        this.fadeIn(&apos;normal&apos;, function() &#123;</div><div class="line">            //this指向原生的DOM元素</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;)(jquery);</div><div class="line"></div><div class="line">$(&apos;#element&apos;).myPlugin();</div></pre></td></tr></table></figure>
+</code></pre><h4 id="真正的插件"><a href="#真正的插件" class="headerlink" title="真正的插件"></a>真正的插件</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    $.fn.oHeight = function() &#123;</div><div class="line">        var height;</div><div class="line">        this.each(function() &#123;</div><div class="line">            $(this).height();</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        return height;</div><div class="line">    &#125;;</div><div class="line">&#125;)(jQuery);</div><div class="line"></div><div class="line">$(&apos;#element&apos;).oHeight();</div></pre></td></tr></table></figure>
+</code></pre><h4 id="保持chainability"><a href="#保持chainability" class="headerlink" title="保持chainability"></a>保持<code>chainability</code></h4><p><code>jQuery</code>中有一个最漂亮的设计就是<em>链式调用</em>，但前面的例子只能返回元素的高度值。为保持插件的<code>chainability</code>，必须确保插件返回<code>this</code>关键字。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    $.fn.myPlugin = function(type) &#123;</div><div class="line">        return this.each(function() &#123;</div><div class="line">            var $this = $(this);</div><div class="line"></div><div class="line">            if(!type || type == &apos;width&apos;) &#123;</div><div class="line">                $this.width($this.width());</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            if(!type || type = &apos;height&apos;) &#123;</div><div class="line">                $this.height($this.height());</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">&#125;)(jQuery);</div><div class="line"></div><div class="line">$(&apos;#element&apos;).myPlugin(&apos;wdith&apos;).css(&apos;color&apos;, &apos;red&apos;);</div></pre></td></tr></table></figure>
+</code></pre><p>插件在立即作用域中返回<code>this</code>关键字，保持了<code>chainability</code>, 所以<code>jQuery</code>集合可以被其他方法操作。同时，调用插件还可以传入参数。</p>
+<h4 id="默认设置和选项"><a href="#默认设置和选项" class="headerlink" title="默认设置和选项"></a>默认设置和选项</h4><p>如果我们的插件很复杂，并且提供了很多选项进行配置，最佳实践是提供一个默认设置。它可以在插件调用时，通过<code>$.entend</code>扩展，这样调用时无须大量参数，只要一个对象参数。内容为你希望替换默认值的那部分设置。代码如下：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    $.fn.myPlugin = function(options) &#123;</div><div class="line">        var settings = $.extend(&#123;</div><div class="line">            &apos;location&apos;: &apos;top&apos;,</div><div class="line">            &apos;background-color&apos;: &apos;red&apos;</div><div class="line">        &#125;, options);</div><div class="line"></div><div class="line">        return this.each(function() &#123;</div><div class="line">            //todo</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">&#125;)(jQuery);</div><div class="line"></div><div class="line">$(&apos;#element&apos;).myPlugin(&#123;</div><div class="line">    &apos;location&apos;: &apos;left&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</code></pre><p>这里我们暂且说说<code>$.extend</code>的事儿。它的扩展原型是<code>extend(dest, src1, src2, src3...)</code>，意思是将<code>src1</code> <code>src2</code> <code>src3...</code> 合并到dest中，返回值为合并后的dest。<br>我们看一个例子：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var newSrc = $.extend(&#123;&#125;, &#123;name: &apos;tom&apos;, age: 21&#125;, &#123;name: &apos;Jerry&apos;, sex: &apos;Boy&apos;&#125;);</div></pre></td></tr></table></figure>
+</code></pre><p>返回的结果是：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newSrc = &#123;name: &apos;Jerry&apos;, age: 21, sex: &apos;Boy&apos;&#125;;</div></pre></td></tr></table></figure>
+</code></pre><p>也就是说如果后面的参数和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。</p>
+<p>如果我们省略了dest，那么直接合并到<code>jQuery</code>的全局对象上面去。</p>
+<p>还有一个需要注意的是：<code>$.extend</code>还可以接受一个参数。例如这样：<code>$.extend(boolean, {}, src1, src2 ...)</code>。这样的做法在于是否是深复制还是浅复制。下面来看两个例子：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var result = $.extend(true, &#123;&#125;, &#123;name: &apos;John&apos;, location: &#123;city: &apos;nanjing&apos;, country: &apos;China&apos;&#125;&#125;, &#123;name: &apos;Tom&apos;, location: &#123;city: &apos;wuhan&apos;, country: &apos;China&apos;&#125;&#125;);</div></pre></td></tr></table></figure>
+</code></pre><p>那么结果是什么呢？测试如下：</p>
+<p><img src="http://of6mwl32w.bkt.clouddn.com/$.extend.png" alt="result"></p>
+<p>两者的嵌套子属性也进行了合并。可以想象，如果前面是<code>false</code>的情况了。默认的也是<code>false</code>，也就是浅复制。测试如下：</p>
+<p><img src="http://of6mwl32w.bkt.clouddn.com/$.extend01.png" alt="result">。</p>
+<p>好了，<code>$.extend</code>介绍到此为止。</p>
+<h4 id="名称空间"><a href="#名称空间" class="headerlink" title="名称空间"></a>名称空间</h4><p>合理的为插件定义名称空间是插件开发中很重要的一部分。正确的定义名称空间可以确保你的插件很难被其它插件或同一页面中的其它代码所覆盖。名称插件也可以帮你跟踪你的方法、事件和数据。</p>
+<p>如果这样写就很不好：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">(function($ &#123;</div><div class="line">    $.fn.tooltip = function(options) &#123;</div><div class="line">        //todo</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    $.fn.tooltipShow = function(options) &#123;</div><div class="line">        //todo</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    $.fn.tooltopHide = function(options) &#123;</div><div class="line">        //todo</div><div class="line">    &#125;</div><div class="line">&#125;)(jQuery)</div></pre></td></tr></table></figure>
+</code></pre><p>这混乱了<code>$.fn</code>名称空间。要修正这个问题，我们可以这样：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line">    var method = function() &#123;</div><div class="line">        init: function(options) &#123;</div><div class="line">            //todo</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        show: function(options) &#123;</div><div class="line">            //todo</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        hide: function(options) &#123;</div><div class="line">            //todo</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">$.fn.tooltip = function(method) &#123;</div><div class="line">    if(methods[method]) &#123;</div><div class="line">        return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));</div><div class="line">    &#125; else if(typeof method === &apos;object&apos; || !method) &#123;</div><div class="line">        return methods.init.apply(this, arguments);</div><div class="line">    &#125; else &#123;</div><div class="line">        $.error(&apos;Method&apos; + method + &apos;does not exist on jQuery.tooltip&apos;);</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line">&#125;)(jQuery);</div><div class="line"></div><div class="line">//调用init方法</div><div class="line">$(&quot;#element&quot;).tooltip();</div><div class="line">//调用init方法，并传入参数</div><div class="line">$(&apos;#element&apos;).tooltip(&#123;</div><div class="line">    foo: &apos;bar&apos;</div><div class="line">&#125;);</div><div class="line">//调用hide方法</div><div class="line">$(&apos;#element&apos;).tooltip(&apos;hide&apos;);</div></pre></td></tr></table></figure>
+</code></pre><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p><code>bind</code>方法有个鲜为人知的特性：它支持为绑定事件定义名称空间。如果你的插件要绑定事件，最好为其定义名称空间。这样，回头想 unbind 的时候就不会影响到相同事件类型上的其它已绑定事件。要为事件定义名称空间，把 “.<namespace>“ 附到要绑定的事件类型后面即可。如下：</namespace></p>
+<p><strong><em> 哈哈，查了一下 <code>bind</code>在<code>jQuery</code>中已经弃用了。算了，不说这个了吧 </em></strong></p>
+<p>好吧，写到这儿了，以上就是我的一点理解。over…</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jquery/" rel="tag">#jquery</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/06/lazyLoad原生三种方式/" rel="next" title="lazyLoad原生三种方式">
+                <i class="fa fa-chevron-left"></i> lazyLoad原生三种方式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          <!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>
+<!-- 多说评论框 end -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"tohere"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="XiaoYang" />
+          <p class="site-author-name" itemprop="name">XiaoYang</p>
+          <p class="site-description motion-element" itemprop="description">如无必要，勿增实体</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shouhutianshi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3016448681/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue-angular-react，说到了的都是MV-，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……"><span class="nav-number">1.</span> <span class="nav-text">时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#言归正题，今天就说说jQuery插件编写中需要注意的事项。"><span class="nav-number">2.</span> <span class="nav-text">言归正题，今天就说说jQuery插件编写中需要注意的事项。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-fn"><span class="nav-number">3.</span> <span class="nav-text">jQuery.fn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上下文"><span class="nav-number">4.</span> <span class="nav-text">上下文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#真正的插件"><span class="nav-number">5.</span> <span class="nav-text">真正的插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持chainability"><span class="nav-number">6.</span> <span class="nav-text">保持chainability</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认设置和选项"><span class="nav-number">7.</span> <span class="nav-text">默认设置和选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#名称空间"><span class="nav-number">8.</span> <span class="nav-text">名称空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件"><span class="nav-number">9.</span> <span class="nav-text">事件</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoYang</span>
+</div>
+ <span id="busuanzi_container_page_pv">
+    欢迎光临本站，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+&nbsp;&nbsp;
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260642686'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260642686' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'tohere';
+      var disqus_identifier = '2017/03/08/jQuery插件编写的注意事项/';
+      var disqus_title = "jQuery插件编写的注意事项";
+      var disqus_url = 'http://yoursite.com/2017/03/08/jQuery插件编写的注意事项/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
