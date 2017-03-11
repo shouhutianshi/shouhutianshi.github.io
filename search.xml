@@ -4,6 +4,109 @@
   
     
     <entry>
+      <title><![CDATA[单行省略与多行省略]]></title>
+      <url>http://yoursite.com/2017/03/11/%E5%8D%95%E8%A1%8C%E7%9C%81%E7%95%A5%E4%B8%8E%E5%A4%9A%E8%A1%8C%E7%9C%81%E7%95%A5/</url>
+      <content type="html"><![CDATA[<h4 id="今天这篇本不该写的，毕竟比较简单。而且兼容性很差，只能用到移动端或者是webkit内核的浏览器。不过写一写也无妨。"><a href="#今天这篇本不该写的，毕竟比较简单。而且兼容性很差，只能用到移动端或者是webkit内核的浏览器。不过写一写也无妨。" class="headerlink" title="今天这篇本不该写的，毕竟比较简单。而且兼容性很差，只能用到移动端或者是webkit内核的浏览器。不过写一写也无妨。"></a>今天这篇本不该写的，毕竟比较简单。而且兼容性很差，只能用到移动端或者是webkit内核的浏览器。不过写一写也无妨。</h4><a id="more"></a>
+<h4 id="一行省略"><a href="#一行省略" class="headerlink" title="一行省略"></a>一行省略</h4><p>一般情况下，我们需要一行文本超出宽度就将后面的字符以省略号代替。那么我们可以这样写：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.wrap &#123;</div><div class="line">    width: 400px;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.content &#123;</div><div class="line">    width: 100%;</div><div class="line">    -ms-text-overflow: ellipsis;</div><div class="line">    text-overflow: ellipsis;</div><div class="line">    overflow: hidden;</div><div class="line">    white-space: nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当当当，我们的效果如下图：<br><img src="http://of6mwl32w.bkt.clouddn.com/%E4%B8%80%E8%A1%8C%E7%9C%81%E7%95%A5.jpg" alt="一行省略"></p>
+<h4 id="多行省略"><a href="#多行省略" class="headerlink" title="多行省略"></a>多行省略</h4><p>有时我们也需要多行省略。这样我们也可以实现，看下面代码：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.wrap &#123;</div><div class="line">    width: 400px;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.content &#123;</div><div class="line">    display: -webkit-box;</div><div class="line">    display: box;</div><div class="line">    -webkit-line-clamp: 5; //控制行数</div><div class="line">    line-clamp: 5;</div><div class="line">    -webkit-box-orient: vertical;</div><div class="line">    box-orient: vertical;</div><div class="line">    width: 100%;</div><div class="line">    -ms-text-overflow: ellipsis;</div><div class="line">    text-overflow: ellipsis;</div><div class="line">    overflow: hidden;</div><div class="line">    white-space: nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>效果就如下图了：<br><img src="http://of6mwl32w.bkt.clouddn.com/%E5%A4%9A%E8%A1%8C%E7%9C%81%E7%95%A5.jpg" alt="多行省略"></p>
+<p>我们可以看到代码中，很多加<code>-webkit</code>前缀，我们看看兼容性。首先是<code>box</code>:<br><img src="http://of6mwl32w.bkt.clouddn.com/box%E5%85%BC%E5%AE%B9%E6%80%A7.jpg" alt="box兼容性"></p>
+<p><code>line-clamp</code>的兼容性：<br><img src="http://of6mwl32w.bkt.clouddn.com/line-clamp%E5%85%BC%E5%AE%B9%E6%80%A7.jpg" alt="line-clamp兼容性"></p>
+<p><code>box-orient</code>的兼容性搜不到。这得是Google自家的属性，caniuse都不收录了…</p>
+<p>所以看来呀，很惨烈。</p>
+<p>本来还有CSS可以实现这种的方式的，太复杂了，我也没仔细琢磨。以后有需要再写吧，先把地址贴这里：<a href="http://mp.weixin.qq.com/s/WumvR8EuQDdoVCUc_88YaA" target="_blank" rel="external">CSS2.1实现多行省略</a></p>
+<p>over…<br>over…</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[性能优化之雅虎军规]]></title>
+      <url>http://yoursite.com/2017/03/11/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%9B%85%E8%99%8E%E5%86%9B%E8%A7%84/</url>
+      <content type="html"><![CDATA[<h4 id="如何让页面最快应该是web开发最关心的问题。之前看了一遍《雅虎35条军规》，今日再来总结一下！-挑重点，有些感觉用不上的就不总结了"><a href="#如何让页面最快应该是web开发最关心的问题。之前看了一遍《雅虎35条军规》，今日再来总结一下！-挑重点，有些感觉用不上的就不总结了" class="headerlink" title="如何让页面最快应该是web开发最关心的问题。之前看了一遍《雅虎35条军规》，今日再来总结一下！(挑重点，有些感觉用不上的就不总结了)"></a>如何让页面最快应该是web开发最关心的问题。之前看了一遍《雅虎35条军规》，今日再来总结一下！(挑重点，有些感觉用不上的就不总结了)</h4><a id="more"></a>
+<h4 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h4><ol>
+<li>Make Fewer HTTP Requests <ol>
+<li>Minimize HTTP Requests减少/最小化http请求数<br>到终端组件数的一个方法就是简化页面设计。保持富内容的页面且能减少http请求，有以下几个技术：<ul>
+<li>Combined fles。合并文件：1)合并js;2)合并CSS。</li>
+<li>CSS Sprites。雪碧图可以合并多个背景图片，通过<code>background-image</code> <code>background-position</code>来显示不同部分。</li>
+<li>Inline images。使用data:url scheme来内连图片。</li>
+</ul>
+</li>
+<li>Reduce DNS Lookups(不明白怎么减少)<br> 减少DNS查询。</li>
+<li>Avoid Redirects<br> 避免跳转。<br> <strong><em> 最浪费的跳转之一发生在urlw尾部slash（/）缺失  </em></strong></li>
+<li>Make Ajax Cacheable<br> 让Ajax可缓存。提高ajax性能的最重要的方法是让相应被缓存。可以添加一个Expires 或者是 Cache-Control Header。还有其他方式是：</li>
+<li>Post-load Components<br> 延迟加载组件。“什么是页面初始化必须的？”剩下的内容和嘴贱可以延迟。<br> JavaScript是理想的（延迟）候选者。可以切分到onload时间之前和之后。比如驼房的js库可以延迟，或者是隐藏的内容，折叠起来的图片等。</li>
+<li>Preload Components<br> 预加载组件。预加载看起来与延迟加载相反，但它的确有个不同的目标。通过预加载你可以利用浏览器的空闲时间请求你将来会用到的组件。这样当用户访问下一个页面时，你会有更多的组件已经在缓存中，这样会极大的加快页面加载。有几种预加载类型：<pre><code>* 无条件预加载：一旦onload触发，你立即获取另外的组件。
+* 有条件预加载：基于用户动作，你推测用户下一步会去哪里加载并加载相应组件。
+* 预期的预加载：在发布重新设计的网站前提前加载。在旧网页预加载新网页的部分组件，那么切换到新网页时就不会是没有任何缓存了、
+</code></pre></li>
+<li>Reduce the Number of DOM Elements<br> 减少dom数。一个复杂的页面意味着更多的内容要下载，以及更慢的dom访问。如果你的页面dom元素很多，那么意味着你可能需要删除无用的内容和标签来优化。</li>
+<li>Split Components Across Domains<br>把组件分散到不同的域名允许你最大化并行下载数。由于DNS查询的副作用，最佳的不同域名数是2-4。</li>
+<li>Minimize the Number of ifames<br> 最小化iframe的数量。iframe允许html文档被插入到父元素文档。iframe的优点有：<pre><code>* 帮助解决缓慢的第三方内容的加载，如广告和徽章
+* 安全沙盒
+* 并行下载脚本
+</code></pre> iframe的缺点：<pre><code>* 即使空的也消耗资源和时间
+* 阻塞了页面的onload
+* 非语义化
+</code></pre></li>
+<li>Not 404<br>不要404。http请求是昂贵的，所以发出http请求但获得没用的响应是完全不必要的，并且会降低用户体验。一些网站会由特别的404页面提高用户体验，但这仍然会浪费服务器资源。特别坏的是当链接指向外部js但却得到404结果。这样首先会降低并行下载数，其次浏览器可能会把404响应体当做js来解析，试图从里面找出可用的东西。</li>
+</ol>
+</li>
+<li>Server<ol>
+<li>Use a Content Delivery Network<br>使用CDN。用户接近你的服务器会减少响应的时间。把你的内容发布到多个，地理上分散的服务器可以让页面加载更快。<br>最好首先分发你的静态内容。这不仅可以减少响应时间，用CDN还很容易来做。</li>
+<li>Add an Expires or a Cache-Control Header<br> 加Expires或者Cache-Control头部。这条规则有两个方面：<pre><code>* 对静态组件： 通过设置Expires头部来实现“永不过期”的策略。
+* 对动态组件： 用合适的Cache-Control头部来帮助浏览器进行有条件请求。
+</code></pre></li>
+<li>Gzip Components<br> 使用时用Gzip等压缩组件。http请求或响应的传输时间可以被前端工程师显著减少。终端用户的带宽，ISP，接近对等交换点等等没法被开发团队控制。但是，压缩可以通过减少http响应的大小减少响应时间。<br> 尽可能去gzip更多文本类型的文件。html，脚本，样式，XML和JSON等等都应该被gzip，而图片，PDF等等不应该被gzip，因为它们本身已被压缩过，gzip它们只是浪费CPU，甚至增加文件大小。</li>
+<li>Avoid Empty Image src<br> 避免空src的图片。空src属性的图片的行为可能跟你预期的不一样，它有两种形式：<pre><code>* html标签：
+* js: var img = new Image();img.src=&quot;&quot;;
+</code></pre> 两种都会造成同一种后果：浏览器会向你的服务器发请求。<pre><code>* IE，向页面所在的目录发请求
+* Safari和Chrome，请求实际的页面
+* Firefox不再发请求
+* Opera遇到空图片src不做任何事
+</code></pre></li>
+</ol>
+</li>
+<li>cookie<br> http cookie的使用有多种原因，比如授权和个性化。cookie的信息通过http头部在浏览器和服务器端交换。尽可能减小cookie的大小来降低响应时间。<pre><code>* 消除不必要的cookie
+* 尽可能减小cookie的大小来降低响应时间
+* 注意设置cookie到合适的域名级别，则其他子域名不会被影响
+* 正确设置Expires日期。早一点的Expires日期或者没有会尽早删除cookie，优化响应时间。
+</code></pre></li>
+<li>CSS<ol>
+<li>Put Stylesheets at the Top<br> 把样式放在顶部。</li>
+<li>Avoid CSS Expressions<br> 避免CSS表达式。</li>
+<li>Choose over @import<br> 在IE用@import和把CSS放到页面底部行为一致，所以最好别用。</li>
+<li>Avoid Filters</li>
+<li>避免使用IE过滤器。<br> 最佳做法是用PNG8优雅降级。</li>
+</ol>
+</li>
+<li>JavaScript<ol>
+<li>Put Scripts at the Bottom<br> 把脚本放在底部。</li>
+<li>Make JavaScript and CSS External<br> 使用外部JS和CSS。就是使用外联的方式引入JS和CSS</li>
+<li>Minify JavaScript and CSS<br> 压缩JS和CSS。压缩就是删除代码中不必要的字符来减小文件大小，从而提高加载速度。当代码压缩时，注释删除，不需要的空格、换行、tab也被删除。除了外部脚本和样式，内连的脚本和样式同样应该被压缩。</li>
+<li>Remove Duplicate Scripts<br> 删除重复的脚本。 在页面中引入相同的脚本两次会上海性能。这可能会超出你的预料，当确实引入重复脚本，会发出不必要的http请求和浪费js执行时间。<br> 避免多次一引入脚本的方法是使用RequireJS，哈哈</li>
+<li>Minimize DOM Access<br> 最小化DOM访问。用JS访问DOM元素是缓慢的，所以为了响应更好的页面，你应该：<pre><code>* 缓存访问过的元素的引用
+* 在DOM树外更新节点，然后添加到DOM树
+* 避免用JS实现固定布局
+</code></pre></li>
+</ol>
+</li>
+<li>Images<ol>
+<li>Optimize Images<br> 优化图片。运行压缩工具压缩图片。</li>
+<li>Optimize CSS Sprites<br> 优化雪碧图。<pre><code>* 把图片横向合而不是纵向，横向更小
+* 把颜色相近的图片合并到一张雪碧图。
+* 合并时，间距不要太大。
+</code></pre></li>
+<li>Don’t Scale Images in HTML<br> 不要在html中缩放图片。不要因为你可以设置图片的狂傲就去用比你需要的大得多的图片。比如你需要100×100，不要用500×500。</li>
+<li>Make favicon.ico Small and Cacheable<br> favicon.ico小且可缓存。favicon.ico是在你的服务器根路径的图片。邪恶的是即使你不关心它，浏览器仍然会请求它。所以最好不要响应404.</li>
+</ol>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[jQuery插件编写的注意事项]]></title>
       <url>http://yoursite.com/2017/03/08/jQuery%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
       <content type="html"><![CDATA[<h4 id="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue-angular-react，说到了的都是MV-，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……"><a href="#时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue-angular-react，说到了的都是MV-，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……" class="headerlink" title="时至今日再来谈jQuery总觉得有点怪怪的。为什么呢？现在都是铺天盖地的vue angular react，说到了的都是MV*，哪里还关乎这个呢？确实，jQuery这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到ES6，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要jQuery的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……"></a>时至今日再来谈<code>jQuery</code>总觉得有点怪怪的。为什么呢？现在都是铺天盖地的<code>vue</code> <code>angular</code> <code>react</code>，说到了的都是MV*，哪里还关乎这个呢？确实，<code>jQuery</code>这不好那也不好，写出的代码也没有逼格，意大利面条似的，还用不到<code>ES6</code>，哭死！我也没有办法，最近要跳槽，打开招聘网站一看，要<code>jQuery</code>的公司多的去了，毕竟实力有限，咋也去不了大公司。继续哭一会儿……</h4><h4 id="言归正题，今天就说说jQuery插件编写中需要注意的事项。"><a href="#言归正题，今天就说说jQuery插件编写中需要注意的事项。" class="headerlink" title="言归正题，今天就说说jQuery插件编写中需要注意的事项。"></a>言归正题，今天就说说<code>jQuery</code>插件编写中需要注意的事项。</h4><a id="more"></a>
@@ -1031,14 +1134,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://yoursite.com/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://yoursite.com/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
